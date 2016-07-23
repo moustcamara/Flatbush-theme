@@ -18,7 +18,7 @@
 
 {{ --SOCIAL_ICONS-- }}
 
-{% assign: Social_Icon_Set = '6' %} {{ Options: '1' to '6' }}
+{% assign: Social_Icon_Set = '5' %} {{ Options: '1' to '6' }}
 {% assign: Social_Size = '25' %}
 
 {% assign: Social_Text = '' %}
