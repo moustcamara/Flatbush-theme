@@ -21,7 +21,7 @@
 {% assign: Social_Icon_Set = '5' %} {{ Options: '1' to '6' }}
 {% assign: Social_Size = '25' %}
 
-{% assign: Social_Text = '' %}
+{% assign: Social_Text = 'Follow Us' %}
 
 {% assign: Show_Twitter_Icon = 'Yes' %}
 {% assign: Your_Twitter_Url = 'http://www.twitter.com/themefiend' %}
