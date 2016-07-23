@@ -674,7 +674,7 @@ $('p:empty, #wide-slider br, #wide-slider p:empty, #home-extra-content br, #prod
   $("#socialicons").show();
         
 {% unless page.url contains 'cart' %}   
-  
+   
         $('[placeholder]').focus(function() {
   var input = $(this);
   if (input.val() == input.attr('placeholder')) {
