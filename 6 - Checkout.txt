@@ -1,0 +1,82 @@
+{{ ------------BEGIN THEME SETTINGS AND CONTROLS------------ }}
+
+{% assign: Background_Color = "#ffffff" %}
+{% assign: Text_Color = "#333333" %}
+{% assign: Loading_Icon_Color = 'black' %} {{ Options: 'white' or 'black' }}
+
+{% assign: Checkout_Message_Details = "Redirecting to Paypal..." %}
+
+{% assign: Logo_Font = "Roboto Condensed" %}
+
+{% assign: Details_Font = "Roboto Condensed" %}
+
+{{ ------------END THEME SETTINGS AND CONTROLS------------ }}
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>{{ store.name }} &mdash; {{ Checkout_Message_Details }}</title>
+  <style type="text/css">
+    
+@import url(http://fonts.googleapis.com/css?family={{ Logo_Font | replace: " " , "+" }}:100,200,300,400,500,600,700,800,900);
+
+@import url(http://fonts.googleapis.com/css?family={{ Details_Font | replace: " " , "+" }}:100,200,300,400,500,600,700,800,900);
+
+    
+    body {
+      margin: 15%;
+      text-align: center;
+      color: {{ Text_Color }};
+      background: {{ Background_Color }};
+      }
+    
+    h1 {
+    font-family: {{ Logo_Font }};
+    font-size: 10vw;
+    text-transform: uppercase;
+    font-style: italic;
+    line-height: 100%;
+    margin: 1% 0px;
+     }
+    
+    
+    p {
+    font-family: {{ Details_Font }};
+    font-size: 4vw;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    }
+    
+.loading-arrows {
+width: 50px;
+position: relative;
+}
+  </style>
+  <script type="text/javascript" charset="utf-8">
+    function checkout() {
+      if(top != self) {
+        top.location.replace(self.location.href);
+        } else {
+        document.checkout_form.submit();
+      }
+    }
+  </script>
+  {{ head_content }}
+</head>
+<body onload="checkout();">
+
+ <div class="checkout-block" align="center" style="margin:20px;">
+   <h1>{% if theme.image == blank %}<span>{{ store.name }}</span>{% else %}<img src="{{ theme.image.url }}" />{% endif %}</h1>
+    <p>{{ Checkout_Message_Details }}</p>
+   <img class="loading-arrows" src="http://themefiend.com/tf-themes/_images/rotating_arrows_{{ Loading_Icon_Color }}.GIF">
+  </div>
+  {% checkoutform %}
+
+    <noscript>
+      <input type="submit" value="Checkout" />
+    </noscript>
+
+  {% endcheckoutform %}
+
+</body>
+</html>

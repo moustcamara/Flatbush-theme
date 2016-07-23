@@ -1,0 +1,48 @@
+{{ ------------BEGIN SETTINGS AND CONTROLS------------ }}
+
+{{ ------BLOG INFO------ }}
+
+{% assign: blog_feed_url = 'http://themefienddemos.blogspot.com/feeds/posts/default?alt=rss' %}
+{% assign: blog_link_url = 'http://themefienddemos.blogspot.com/' %}
+{% assign: blog_link_text = 'Read more at our blog site' %}
+{% assign: number_of_entries = 10 %}
+
+{{ ------FORMAT OPTIONS------ }}
+
+{% assign: blog_link_behaviour = 'newwindow' %}
+{% assign: post_date_format = 'F jS, Y' %}
+{% assign: align_blog_to_center = 'No' %}
+
+{{ ------SOCIAL SHARING OPTIONS------ }}
+
+{% assign: share_blog_entries_tool = 'addthis' %}
+{% assign: share_tool_style = 8 %}
+
+{{ ------------END SETTINGS AND CONTROLS------------ }}
+
+
+<div id="blog_content" class="wrp{% if display_sidebar == 'Yes' %} with_side{% endif %}{% if blog_width != blank %} def_width{% endif %}">
+<div class="inner" style="{% if align_blog_to_center == 'Yes' %}margin: 0 auto;{% endif %}{% if blog_width != blank %}width:{{ blog_width }}px;{% endif %}">
+<div id="post_bar">
+<div id="loading_blog">
+  <span>Loading posts...</span>
+  <img src="http://themefiend.com/_demo/ajax-loader.gif">
+  </div>
+</div>
+<div class="clr"></div>
+</div>
+</div>
+
+<script type="text/javascript">
+var feedURL = '{{ blog_feed_url | strip_html | replace: "'", "\\'" }}';
+var numEntries = '{{ number_of_entries | strip_html | replace: "'", "\\'" }}';
+var blogURL = '{{ blog_link_url | strip_html | replace: "'", "\\'" }}';
+var blogLink = '{{ blog_link_text | strip_html | replace: "'", "\\'" }}';
+var linkAtts = '{{ blog_link_behaviour | strip_html | replace: "'", "\\'" }}';
+var dateFormat = '{{ post_date_format | strip_html | replace: "'", "\\'" }}';
+var shareEntries = '{{ share_blog_entries_tool | strip_html | replace: "'", "\\'" }}';
+var addThisID = '{{ addthis_pulisher_id | strip_html | replace: "'", "\\'" }}';
+var shareFormat = '{{ share_tool_style | strip_html | replace: "'", "\\'" }}';
+</script>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript" src="http://themefiend.com/_demo/tf-blog-code.js"></script>

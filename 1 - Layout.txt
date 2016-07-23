@@ -1,0 +1,714 @@
+{{ ------------BEGIN THEME SETTINGS AND CONTROLS------------ }}
+
+{% assign: Theme_Fiend_Lab_UserName = 'themefiend' %}
+{% assign: Image_Source = 'Lab' %} {{ Options: 'Lab' or 'Self-hosted' }}
+
+{% assign: Show_Home_Link = 'Yes' %} {{ Options: 'Yes' or 'No' }}
+
+{% assign: Show_Contact_Link_in_Header = 'No' %} {{ Options: 'Yes' or 'No' }}
+
+{{ ----FAVICON SETTINGS---- }}
+
+{% assign: Favicon_URL = 'http://example.com/favicon.jpg' %}
+
+{{ Note:  Only set 'Favicon_URL' if you chose the 'Self-hosted' Option }}
+{{ If you upload an image with the name 'favicon' to your Theme Fiend Lab account, and set your 'Image_Source' to 'Lab', the favicon you added will automatically show }}
+
+{{ Note: Favicon should be 32x32 (in pixels). Favicons should also be in '.png', '.jpg' or.'gif' format }}
+
+{{ --SOCIAL_ICONS-- }}
+
+{% assign: Social_Icon_Set = '6' %} {{ Options: '1' to '6' }}
+{% assign: Social_Size = '25' %}
+
+{% assign: Social_Text = '' %}
+
+{% assign: Show_Twitter_Icon = 'Yes' %}
+{% assign: Your_Twitter_Url = 'http://www.twitter.com/themefiend' %}
+
+{% assign: Show_Facebook_Icon = 'Yes' %}
+{% assign: Your_Facebook_Url = 'http://www.facebook.com/themefiend' %}
+
+{% assign: Show_Tumblr_Icon = 'Yes' %}
+{% assign: Your_Tumblr_Url = 'http://www.tumblr.com/themefiend' %}
+
+{% assign: Show_Vimeo_Icon = 'Yes' %}
+{% assign: Your_Vimeo_Url = 'http://www.vimeo.com/username' %}
+
+{% assign: Show_Youtube_Icon = 'No' %}
+{% assign: Your_Youtube_Url = 'http://www.youtube.com/username' %}
+
+{% assign: Show_Pinterest_Icon = 'No' %}
+{% assign: Your_Pinterest_Url = 'http://www.pinterest.com/username' %}
+
+{% assign: Show_Instagram_Icon = 'No' %}
+{% assign: Your_Instagram_Url = 'http://www.instagram.com/username' %}
+
+{% assign: Show_GooglePlus_Icon = 'No' %}
+{% assign: Your_GooglePlus_Url = 'http://plus.google.com/username' %}
+
+{{ NOTE: In the event that you want to include an icon/link to a different social network site not listed, configure settings below: }}
+
+{% assign: Show_Other_Social_Network_Site_Icon = 'No' %}
+{% assign: Other_Social_Network_Site_Icon_Image_Url = ' ' %}
+{% assign: Your_Other_Social_Network_Site_Url = ' ' %}
+
+
+{{ --SIDEBAR-- }}
+
+{% assign: Show_Sidebar_on_Home_Page = 'No' %} {{ Options: 'Yes' or 'No' }}
+
+{% assign: Location_of_Extra_Sidebar_Links = 'Within Categories' %} {{ Options: 'Within Categories' or 'Outside Categories' }}
+
+{% assign: Categories_Heading = "Categories" %}
+
+{% assign: Artists_Heading = "Brands" %}
+
+
+{{ -----NEWSLETTER_SECTION----- }}
+
+{% assign: Show_Newsletter_Form = 'Yes' %} {{ Options: 'Yes' or 'No' }}
+
+{% assign: Newsletter_Form_Heading_Text = "Sign up for News and Updates" %}
+{% assign: Placeholder_Text_in_Form = "E-mail Address" %}
+
+{% assign: Newsletter_Provider = 'MC' %} 
+{{ Options: 'CC' (Constant Contact), 'MC' (MailChimp), 'YMLP' (Your MailingList Provider), 'VR' (Vertical Response), 'MM' (Mad Mimi) }}
+
+{{ Note: Configure settings below based on your newsletter provider. The values/urls you enter in the fields for your newsletter form can by creating a form in your newsletter provider account. }}
+{{ More info can be found in the theme instructions guide that came with your theme }}
+
+{{ For CONSTANT CONTACT USERS }}
+{% assign: Constant_Contact_llr_value = '6m5rzwcab' %}
+{% assign: Constant_Contact_m_value = '1102424111517' %}
+
+{{ For MAILCHIMP USERS }}
+{% assign: MailChimp_form_action_url = 'http://themefiend.us2.list-manage2.com/subscribe/post?u=27b7d5cbfb45164d58769c000&amp;id=37e8ad6e0d' %}
+
+{{ For YMLP USERS }}
+{% assign: YMLP_form_action_url = 'http://ymlp.com/subscribe.php?id=gjbhymegmgj' %}
+{% assign: YMLP_email_input_name = 'YMP0' %}
+ 
+{{ For VERTICAL RESPONSE USERS }}
+{% assign: Vertical_Response_form_action_url = 'http://oi.vresp.com?fid=6eb42ac653' %}
+{% assign: Vertical_Response_Pop-up_or_Redirect = 'Redirect' %} {{ Options: 'Pop-up' or 'Redirect }}
+
+{{ For MAD MIMI USERS }}
+{% assign: Mad_Mimi_form_action_url = 'https://madmimi.com/signups/subscribe/60701' %}
+
+{{ --FOOTER-- }}
+
+{% assign: Show_Footer_Navigation_Links = 'Yes' %}
+
+{% assign: Copyright_Statement_Text = "All Rights Reserved" %}
+{% assign: Remove_Designed_by_Theme_Fiend_Credit = 'No' %} {{ Options: 'Yes' or 'No' }}
+
+{% assign: Show_Header_Links_in_Footer_too = 'No' %} {{ Options: 'Yes' or 'No' }}
+
+
+{{ ---PAGE REDIRECTION--- }}
+
+{% assign: Redirect_1_Original_Page_URL_Slug = "example-page" %}
+{% assign: Redirect_1_New_External_URL = 'http://example.com' %}
+{% assign: Redirect_1_Window = 'New Window' %} {{ Options: 'New Window' or 'Same Window' }}
+
+{% assign: Redirect_2_Original_Page_URL_Slug = "example-page" %}
+{% assign: Redirect_2_New_External_URL = 'http://example.com' %}
+{% assign: Redirect_2_Window = 'Same Window' %} {{ Options: 'New Window' or 'Same Window' }}
+
+{% assign: Redirect_3_Original_Page_URL_Slug = "example-page" %}
+{% assign: Redirect_3_New_External_URL = 'http://example.com' %}
+{% assign: Redirect_3_Window = 'New Window' %} {{ Options: 'New Window' or 'Same Window' }}
+
+{% assign: Redirect_4_Original_Page_URL_Slug = "example-page" %}
+{% assign: Redirect_4_New_External_URL = 'http://example.com' %}
+{% assign: Redirect_4_Window = 'Same Window' %} {{ Options: 'New Window' or 'Same Window' }}
+
+{{ ------------END THEME SETTINGS AND CONTROLS------------ }}
+
+<!doctype html>
+<!--[if lte IE 9 ]><html class="ie" lang="en"><![endif]-->
+<!--[if gt IE 9 ]><html lang="en"><![endif]-->
+<!--[if !IE ]><html lang="en"><![endif]-->
+  <head>    
+    
+    
+    <title>{{ page.name | remove: '-footer-' | remove: '-hide-' | remove: '-sidebar-' | remove: '-subnav-' | remove: '-f1-' | remove: '-f2-' | remove: '-f3-' }} | {{ store.name }}</title>
+  
+    <meta charset="UTF-8">
+    <!--[if IE ]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->  
+
+    <meta name="author" content="{{ store.name }}">
+    <meta name="description" content="{{ page.meta_description }}">
+    <meta name="keywords" content="{{ page.meta_keywords }}">
+    
+    {% if product != blank and page.full_url contains '/product/' %}
+    <meta property="og:title" content="{{ product.name | escape }}">
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="{{ page.full_url }}">
+    <meta property="og:image" content="{{ product.image.url }}">
+    <meta property="og:site_name" content="{{ store.name | escape }}">
+    {% endif %}  
+  
+    <script type="text/javascript" src="https://s3.amazonaws.com/themefiend/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://s3.amazonaws.com/themefiend/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://s3.amazonaws.com/themefiend/css/bootstrap-responsive.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    
+    <link rel="stylesheet" href="{{ theme | theme_css_url }}">
+    
+        <!-- Product Grid Framework -->
+    <link rel="stylesheet" href="https://s3.amazonaws.com/themefiend/css/product_grid_framework.css">
+    
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    
+    	<script src="//ajax.googleapis.com/ajax/libs/prototype/1.6.0.2/prototype.js" type="text/javascript"></script>
+
+    
+<link href="/products.rss" rel="alternate" title="Product RSS Feed" type="application/rss+xml" />
+
+{{ --BEGIN FAVICON CODE-- }}    
+    
+{% assign: Lab = 'http://themefiendlab.com/hosting/images/' %}
+    
+{% capture favicon_url_string %}{{ Favicon_URL | remove: 'png'| remove: 'jpg'| remove: 'jpeg' | remove: 'gif' }}{% endcapture %}
+    
+{% capture favicon_url_extention %}{{ Favicon_URL | remove: favicon_url_string }}{% endcapture %}
+    
+    
+{% if Image_Source == 'Self-hosted' %}
+<link rel="icon" type="image/{{ favicon_url_extention }}" href="{{ Favicon_URL }}">
+{% endif %}
+    
+
+{% if Image_Source contains 'ab' %}
+<link rel="icon" type="image/jpg" href="{{ Lab }}{{ Theme_Fiend_Lab_UserName }}/favicon.jpg">
+{% endif %}
+    
+{{ --END FAVICON CODE-- }}
+    
+
+    
+    {{ head_content }}
+  
+  </head>
+  
+  <body id="{{ page.permalink }}-page" class="{{ page.permalink }} {{ page.category }}">
+    
+
+ 
+{{ ---------------------------BEGIN HEADER AREA--------------------------- }}
+      
+                    
+      <div id="header-area">
+        
+        <div id="header-contents">
+        
+        <div id="header"{% if theme.image != blank %} class="image" {% endif %}> 
+          
+      <div id="left-header">           
+           <div id="socialicons">
+              {% assign Img_Lib = 'http://themefiend.com/tf-themes/_images' %}
+              {% assign Lib_Soc = '/social-btn/pack-' %}
+       <span id="social-text">{{ Social_Text }}</span>
+              <div id="icons">
+                {% if Show_Twitter_Icon == 'Yes' or if Show_Twitter_Icon == 'yes' %}<li><a href="{{ Your_Twitter_Url }}" target="new"><img src="{{ Img_Lib | append: Lib_Soc | append: Social_Icon_Set }}/twitter.png" ></a></li>{% endif %}
+              {% if Show_Facebook_Icon == 'Yes' or if Show_Facebook_Icon == 'yes' %}<li><a href="{{ Your_Facebook_Url }}" target="new"><img src="{{ Img_Lib | append: Lib_Soc | append: Social_Icon_Set }}/facebook.png"></a></li>{% endif %}
+              {% if Show_Tumblr_Icon == 'Yes' or if Show_Tumblr_Icon == 'yes' %}<li><a href="{{ Your_Tumblr_Url }}" target="new"><img src="{{ Img_Lib| append: Lib_Soc | append: Social_Icon_Set }}/tumblr.png"></a></li>{% endif %}
+              {% if Show_Youtube_Icon == 'Yes' or if Show_Youtube_Icon == 'yes' %}<li><a href="{{ Your_Youtube_Url }}" target="new"><img src="{{ Img_Lib | append: Lib_Soc | append: Social_Icon_Set }}/youtube.png"></a></li>{% endif %}
+              {% if Show_Vimeo_Icon == 'Yes' or if Show_Vimeo_Icon == 'yes' %}<li><a href="{{ Your_Vimeo_Url }}" target="new"><img src="{{ Img_Lib | append: Lib_Soc | append: Social_Icon_Set }}/vimeo.png"></a></li>{% endif %}
+              {% if Show_Pinterest_Icon == 'Yes' or if Show_Pinterest_Icon == 'yes' %}<li><a href="{{ Your_Pinterest_Url }}" target="new"><img src="{{ Img_Lib | append: Lib_Soc | append: Social_Icon_Set }}/pinterest.png"></a></li>{% endif %} 
+              {% if Show_Instagram_Icon == 'Yes' or if Show_Instagram_Icon == 'yes' %}<li><a href="{{ Your_Instagram_Url }}" target="new"><img src="{{ Img_Lib | append: Lib_Soc | append: Social_Icon_Set }}/instagram.png"></a></li>{% endif %}    
+              {% if Show_GooglePlus_Icon == 'Yes' or if Show_GooglePlus_Icon == 'yes' %}<li><a href="{{ Your_GooglePlus_Url }}" target="new"><img src="{{ Img_Lib | append: Lib_Soc | append: Social_Icon_Set }}/googleplus.png"></a></li>{% endif %}              
+              {% if Show_Other_Social_Network_Site_Icon == 'Yes' or if Show_Other_Social_Network_Site_Icon == 'yes' %}<li><a href="{{ Your_Other_Social_Network_Site_Url }}" target="new"><img src="{{ Other_Social_Network_Site_Icon_Image_Url }}"></a></li>{% endif %}
+            </div>           
+        </div>
+      </div>
+          
+          <h1>
+            <a href="/"><span>{{ store.name }}</span>{% if theme.image != blank %}<img src="{{ theme.image.url }}" />{% endif %}</a>
+          </h1>
+          
+          <div id="right-header">    
+       
+       {% capture minicart %}
+       <div id="minicart">
+         <a href="/cart"><li class="cart-count"><span class="minicart-text desktop-element">CART</span><span>({{ cart.item_count }})</span></li><li><img src="http://themefiend.com/tf-themes/_images/minicart/cart-7.png" style="width: 16px;"></li></a>
+       </div>
+       {% endcapture %}
+          
+           {{ minicart }}
+            
+        {% capture search_form %}
+          <div id="search" class="desktop-element">
+            <form class="form-search" name="search" action="/products" method="get">
+              <input id="search-input" name="search" type="text" placeholder="Search" />
+              <button id="search-submit" name="search-submit" type="submit" title="Search"></button>
+            </form>
+          </div>
+       {% endcapture %}   
+            
+            
+</div>
+          
+
+                          
+</div>
+          
+         
+       </div>
+        
+          {% capture Main_Header_Links %}
+      
+              
+             {% assign: current_page = page.name %}
+      
+           {% for page in pages.all %}
+           {% unless page.name contains '-hide-' or page.name contains '-footer-' or page.name contains '-sidebar-' or page.name contains '-subnav-' or page.name contains '-content_block-'  %}
+		{% if page.name == current_page %}
+			<li class="current-page">
+			{% else %}
+			<li>
+			{% endif %}
+			{{ page | link_to }}
+                          </li>
+                                     {% endunless %}
+             {% endfor %}
+                          
+                          
+                          {% if Show_Contact_Link_in_Header == 'Yes' %}
+                          
+                          {% if page.full_url contains '/contact' %}
+			<li class="current-page">
+			{% else %}
+			<li>
+			{% endif %}
+                          {{ pages.contact | link_to }}
+                          </li>
+                          
+                          {% endif %}
+                          
+                          
+            {% endcapture %}
+          
+
+      {{ --BEGIN MOBILE HEADER NAV-- }}
+<div id="header-navigation" class="mobile-element">      
+          
+  <div id="mobilenavigation">
+   
+        <li class="mobile-cart-link"><a href="/products">Shop</a></li>
+   
+
+   <li class="mobile-menu-link"><a href="#">Menu</a>
+    <nav id="mobilenav">          
+      <ul id="mobtopnav">
+      {{ Main_Header_Links | replace: "desktop-element", "mobile-element" }}   
+     </ul>
+   </nav>
+   </li>
+   <li class="mobile-search-link"><a href="#">Search</a>
+    <nav id="mobilesearch" class="visible-phone">
+      {{ search_form | replace: "desktop-element" , "mobile-element" }}
+     </nav>
+   </li>
+   
+   </div>
+            
+ </div>
+  {{ --END MOBILE HEADER NAV-- }} 
+          
+          <div id="header-navigation" class="desktop-element">
+            <ul>  
+          {% if Show_Home_Link contains 'es' %}<li><a href="/">Home</a></li>{% endif %}
+          <li><a href="/products">Shop</a></li>
+          {{ Main_Header_Links }}
+              <li class="break">&nbsp;</li>
+        </ul>
+                       
+           </div>
+	   
+	  
+    </div>          
+{{ ---------------------------END HEADER AREA--------------------------- }}  
+ 
+          
+    <div id="wrap">
+      
+          <div id="container">          
+        
+            {{ --BEGIN ERROR DISPLAY-- }}
+        
+        <noscript>
+          <div class="error" id="error">
+            <ul>
+              <li>JavaScript must be enabled to use this store!</li>
+            </ul>
+          </div>
+        </noscript>{% if errors != blank %}
+        <div id="error" class="error">
+          <ul>{% for error in errors %}
+            <li><u>Error:</u> {{ error }}</li>{% endfor %}</ul>
+        </div>{% endif %}
+        
+      {{ --END ERROR DISPLAY-- }}
+      
+      <div id="contents"> 
+        
+
+  {{ ---------------------------BEGIN MOBILE CATEGORY DROPDOWN MENU AREA--------------------------- }}          
+        
+         {% if page.full_url contains '/products' or page.full_url contains '/category' or page.full_url contains '/artist' %}    
+
+    <form id="choose-category" name="menuform1" class="mobile-element">
+<select id="categories-form" style="width:100%" name="menu1" onChange="self.location.href = this.form.menu1.options[this.form.menu1.selectedIndex].value; return false;">
+ <option>{{ Categories_Heading }}</option>
+  
+  {% for category in categories.all %}
+  <option value="{{ category.url }}">{{ category.name }}</option>
+  {% endfor %}
+ 
+            {% if page.name contains '-sidebar-' or page.name contains '-subnav- %}
+     <option value="{{ page.url }}">{{ page.name | remove: '-sidebar-' | remove: '-subnav-' }}</option>
+            {% endif %}
+    
+</select>
+</form>
+    
+{% for artist in artists.active limit:1 %}    
+    <form id="choose-category" class="artist-category-dropdown mobile-element" name="menuform2">
+<select id="categories-form" style="width:100%" name="menu2" onChange="self.location.href = this.form.menu2.options[this.form.menu2.selectedIndex].value; return false;">
+ <option>{{ Artists_Heading }}</option>
+      {% for artist in artists.all %}
+<option value="{{ artist.url }}">{{ artist.name }}</option>
+      {% endfor %}
+</select>
+</form>
+{% endfor %}
+    
+{% endif %}
+        
+{{ ---------------------------END MOBILE CATEGORY DROPDOWN MENU AREA--------------------------- }}  
+        
+ {{ ---------------------------BEGIN SIDEBAR AREA--------------------------- }}  
+        
+    {% capture Sidebar %}
+        <div id="sidebar-navigation" class="desktop-element">
+          
+          <div id="categories">
+    
+        {% capture Category_Links %}           
+                                     
+     	{% for category in categories.all %}
+		{% assign parent_cat_name = category.name %}
+     		  {% assign parent_cat_url = category.url %}
+		{% capture sub_cat_list %}
+			{% for cat2 in categories.active %}
+			{% unless cat2.name == parent_cat_name %}
+         		{% capture parent_cat_string %}{{parent_cat_name}} - {% endcapture %}
+                          {% capture parent_cat_url_string %}{{ parent_cat_url }}-{% endcapture %} 
+				{% if cat2.name contains parent_cat_name %}
+					{% assign has_sub_cats = 'true' %}
+                 	{% capture new_sub_cat_name %}{{ cat2.name | replace_first: parent_cat_string, "" }}{% endcapture %}
+	{% if cat2.url contains parent_cat_url_string %}<li>{{ cat2 | link_to: new_sub_cat_name }}</li>{% endif %}
+				{% endif %}
+			{% endunless %}
+			{% endfor %}
+		{% endcapture %}
+ 
+		{% unless category.name contains ' - ' %}
+                          <li><a href="{{ category.url }}">{{ category.name }}</a>{% if has_sub_cats == 'true' %}{% if page.name contains category.name %}<ul class="sub-categories">{{ sub_cat_list }}</ul>{% endif %}{% endif %}</li>
+		{% endunless %}
+ 
+		{% assign has_sub_cats = 'false' %}          
+	{% endfor %}
+                          
+                  {% endcapture %}
+    
+     {% capture Extra_Sidebar_Links %}
+    
+   {% for page in pages.all %}
+            {% if page.name contains '-sidebar-' or page.name contains '-subnav- %}
+    <li><a href="{{ page.url }}">{{ page.name | remove: '-sidebar-' | remove: '-subnav-' }}</a></li>
+            {% endif %}
+   {% endfor %}
+    
+    
+ {% endcapture %}
+
+             <ul class="categories-list">
+    
+    {% unless Location_of_Extra_Sidebar_Links contains 'ithin' %}{{ Extra_Sidebar_Links }}{% endunless %}
+    
+        <li class="sidebar-headings">{{ Categories_Heading }}</li>        
+    
+    <li><a href="/products">All</a></li>
+    {% if Location_of_Extra_Sidebar_Links contains 'ithin' %}{{ Extra_Sidebar_Links }}{% endif %}
+	{{ Category_Links }}
+    </ul>
+    
+{% for artist in artists.active limit:1 %}        
+    <ul class="brand-list">
+    <li class="sidebar-headings">{{ Artists_Heading }}</li>
+      <div class="artists-linkset">
+    {% for artist in artists.active %}
+    <li class="artist-link"><a href="{{ artist.url }}">{{ artist.name }}</a></li>
+    {% endfor %}
+       </div>
+     </ul>
+{% endfor %}    
+            </div>
+    
+
+    
+           </div>
+    
+    {% endcapture %}
+        
+{% if page.permalink contains 'home' %}{% if Show_Sidebar_on_Home_Page contains 'es' %}{{ Sidebar }}{% endif %}{% endif %}
+        
+{% unless page.permalink contains 'home' %}{{ Sidebar }}{% endunless %}
+        
+            
+{{ ---------------------------END SIDEBAR AREA--------------------------- }}         
+    
+      
+        <div id="main">
+
+{% unless page.permalink contains 'home' %}
+          <div id="page_title-search">    
+            {% unless page.full_url contains 'blog' %}
+            
+   {% unless page.name contains " - " or page.full_url contains "product/" %}<h1 class="page-title"><span style="font-size:80%">&#9654;</span> {{ page.name | remove: '-footer-' | remove: '-hide-' | remove: '-sidebar-' | remove: '-subnav-' | remove: '-f1-' | remove: '-f2-' | remove: '-f3-' }}</h1>{% endunless %}       
+                    
+           {% assign parent_cat_name_2 = page.name %}
+          
+          {% if page.name contains " - " %}		          
+          
+          {% for category in categories.all %}
+		{% assign parent_cat_name = category.name %}
+		{% capture sub_cat_title %}
+			{% for cat2 in categories.active %}
+			{% unless cat2.name == parent_cat_name %}
+         		{% capture parent_cat_string %}{{ parent_cat_name }} - {% endcapture %}
+				{% if cat2.name contains parent_cat_name %}
+					{% assign has_sub_cats = 'true' %}
+                 	{% capture new_sub_cat_name %}{{ cat2.name | replace_first: parent_cat_string, "" }}{% endcapture %}
+                          {% if parent_cat_name_2 contains new_sub_cat_name %}<h1 class="page-title"><span style="font-size:80%">&#9654;</span> {{ new_sub_cat_name }}</h1>{% endif %}
+				{% endif %}
+			{% endunless %}
+			{% endfor %}
+		{% endcapture %} 
+
+        {% unless Hide_Category_and_Artist_Title == 'Yes' %}{{ sub_cat_title }}{% endunless %}
+ 
+          {% endfor %}
+
+          {% endif %}
+
+
+    {% endunless %}
+       
+            
+{% if page.full_url contains '/product' or page.full_url contains '/category' or page.full_url contains '/artist' or page.full_url contains '/cart' or page.full_url contains '/new' or page.full_url contains '/sale' or page.full_url contains '/latest' %}                                       
+            {{ search_form }}
+ {% endif %}
+            
+</div>  
+{% endunless %}
+          
+          <div id="main-content">
+             
+            {% if page.category == 'custom' %} 
+            {{ page_content | paragraphs }} 
+            {% else %} 
+            {{ page_content }} 
+            {% endif %}
+          </div>
+      </div>
+    
+  
+      </div>
+            
+      </div>
+    
+ </div>       
+               
+{{ ---------------------------BEGIN FOOTER AREA--------------------------- }}
+            
+    
+    <div id="footer" class="footer">
+      
+     <div id="inner-footer">
+           
+      <ul id="column-1" class="footer-column">
+           
+    {{ --BEGIN NEWSLETTER FORM-- }}
+
+{% unless Show_Newsletter_Form contains 'o' %} 
+
+  <div id="newsletter-container"  class="input-append">
+    
+    <h3>{{ Newsletter_Form_Heading_Text }}</h3>
+    
+    {% assign: nl_button_text = 'Subscribe' %}
+    
+      {% if Newsletter_Provider == 'CC' %}
+          <form name="ccoptin" action="http://visitor.r20.constantcontact.com/d.jsp" target="_blank" method="post" style="">
+            <input type="hidden" name="llr" value="{{ Constant_Contact_llr_value }}">
+            <input type="hidden" name="m" value="{{ Constant_Contact_m_value }}">
+            <input type="hidden" name="p" value="oi">
+            <input type="text" id="newsletter-form" name="ea" value="{{ Placeholder_Text_in_Form }}" onclick="this.value='';"/>
+            <input type="submit" id="signup-btn" name="go" value="{{ nl_button_text }}" class="submit btn"/>
+          </form>
+      {% endif %}
+     
+      {% if Newsletter_Provider == 'MC' %}
+         <form target="_blank" name="mc-embedded-subscribe-form" method="post" action="{{ MailChimp_form_action_url | remove: 'form ' | remove: 'action=' }}" >
+           <input  type="email" onclick="this.value='';" value="{{ Placeholder_Text_in_Form }}" name="EMAIL" id="newsletter-form"/>
+           <input type="submit" id="signup-btn" value="{{ nl_button_text }}" name="subscribe"/>
+         </form>
+       {% endif %}
+      
+      {% if Newsletter_Provider == 'YMLP' %}
+      <form method="post" action="{{ YMLP_form_action_url | remove: 'action=' }}" target="_blank">
+         <input  type="email" onclick="this.value='';" value="{{ Placeholder_Text_in_Form }}" name="{{ YMLP_email_input_name }}" id="newsletter-form">
+         <input type="submit" id="signup-btn" value="{{ nl_button_text }}" >
+         </form>
+       {% endif %}
+      
+     {% if Newsletter_Provider == 'VR' %}
+      <form method="post" action="{{ Vertical_Response_form_action_url | remove: 'action=' }}" {% if Vertical_Response_Pop-up_or_Redirect == 'Pop-up' %}target="vr_optin_popup" onsubmit="window.open( 'http://www.verticalresponse.com', 'vr_optin_popup', 'scrollbars=yes,width=600,height=450' ); return true;"{% endif %} >
+    <input name="email_address" onclick="this.value='';" value="{{ Placeholder_Text_in_Form }}" id="newsletter-form"/>
+    <input type="submit" value="{{ nl_button_text }}" id="signup-btn"/><br/>
+      </form>
+       {% endif %}
+      
+           {% if Newsletter_Provider == 'MM' %}
+      <form target="_blank" action='{{ Mad_Mimi_form_action_url | remove: 'action=' }}' method='post' id='mad_mimi_signup_form'>
+ <input  name='signup[email]' onclick="this.value='';" value="{{ Placeholder_Text_in_Form }}" id="newsletter-form"/>
+        <input type="submit" value="{{ nl_button_text }}" id="signup-btn"/><br/>
+        </form>
+             {% endif %}         
+      
+    </div>
+        
+{% endunless %}
+
+  {{ --END NEWSLETTER FORM-- }}
+        
+         </ul>
+
+  <ul id="column-2" class="footer-column">
+       
+         {% if Show_Footer_Navigation_Links contains 'es' %}    
+      <div id="footer-navigation">  
+        <ul>
+            {% if Show_Header_Links_in_Footer_too contains 'es' %} 
+                {{ Main_Header_Links }}
+                {% endif %}
+            {% if Contact_Link_Column == 'Col-1' %}<li>{{ pages.contact | link_to }}</li>{% endif %}
+                {% for page in pages.all %}
+            {% if page.name contains '-footer-' %}
+            <li><a href="{{ page.url }}">{{ page.name | remove: '-footer-' | remove: '-f1-' | remove: '-f2-' | remove: '-f3-' }}</a></li>
+           {% endif %}               
+                {% endfor %}
+          
+          {% unless Show_Contact_Link_in_Header == 'Yes' %}<li>{{ pages.contact | link_to }}</li>{% endunless %}
+          
+      </ul>
+     </div>  
+    {% endif %}  
+        
+<span id="footer-text">
+    &copy; {{ 'now' | date: "%Y" }}
+                <a href="/"><b>{{ store.name }}</b></a> {{ Copyright_Statement_Text }} {% if Remove_Designed_by_Theme_Fiend_Credit != 'Yes' %}| Designed by <a href="http://www.themefiend.com" target="new">Theme Fiend.</a>{% endif %}
+</span>
+       
+   </ul>     
+      
+    </div>
+      
+    </div>
+    
+        
+</div>   
+{{ ---------------------------END FOOTER AREA--------------------------- }} 
+    
+
+              
+<style type="text/css">  
+#socialicons img {height:{{ Social_Size }}px;}
+{% if page.permalink contains 'home' %}{% if Show_Sidebar_on_Home_Page contains 'o' %}#main {width:100%}{% endif %}{% endif %} 
+</style>
+        
+
+      
+        <!-- Disable default TF social icons and newsletter form (if not configured yet)-->          
+<style type="text/css">
+#socialicons #icons li a[href*=themefiend], #socialicons #icons li a[href*=username] {pointer-events: none !important;cursor: not-allowed}
+form[action*="themefiend"] input, form[action*="gjbhymegmgj"] input, form[action*="6eb42ac653"] input, form[action*="60701"] input {pointer-events: none;}
+form input[value="1102424111517"] ~ input {pointer-events: none;}
+</style>
+<!-- End Disable code -->
+
+<script type="text/javascript" src="https://s3.amazonaws.com/themefiend/js/flexslider/jquery.flexslider-min.js"></script>
+  <script type="text/javascript" src="https://s3.amazonaws.com/themefiend/js/flexslider/jquery.fitvid.js"></script>    
+  <script type="text/javacript" src="https://s3.amazonaws.com/themefiend/js/flexslider/jquery.easing.js"></script>
+          
+<script type="text/javascript">
+
+ (function($) { 
+  
+  $("body#cart-page").on("click",".remove-btn",function(e){return e.preventDefault(),$(this).closest("tr").find("input[id$=_qty]").val(0).closest("form").submit();});
+        
+$('p:empty, #wide-slider br, #wide-slider p:empty, #home-extra-content br, #products br').remove();   
+  
+   $(".mobile-menu-link a").click(function () {
+      $("#mobilenav").toggleClass("active");
+    });
+         $(".mobile-search-link a").click(function () {
+      $("#mobilesearch").toggleClass("active");
+    });
+  
+  $("#socialicons").show();
+        
+{% unless page.url contains 'cart' %}   
+  
+        $('[placeholder]').focus(function() {
+  var input = $(this);
+  if (input.val() == input.attr('placeholder')) {
+    input.val('');
+    input.removeClass('placeholder');
+  }
+}).blur(function() {
+  var input = $(this);
+  if (input.val() == '' || input.val() == input.attr('placeholder')) {
+    input.addClass('placeholder');
+    input.val(input.attr('placeholder'));
+  }
+}).blur().parents('form').submit(function() {
+  $(this).find('[placeholder]').each(function() {
+    var input = $(this);
+    if (input.val() == input.attr('placeholder')) {
+      input.val('');
+    }
+  })
+});
+  
+  {% endunless %}
+ 
+  $('p:empty, #wide-slider br').remove();
+   
+// Page Link Redirect Hooks 
+  $("a[href^='/{{ Redirect_1_Original_Page_URL_Slug }}']").prop("href", "{{ Redirect_1_New_External_URL }}").attr("target","{% if Redirect_1_Window contains 'ew' %}_blank{% else %}_self{% endif %}");
+  $("a[href^='/{{ Redirect_2_Original_Page_URL_Slug }}']").prop("href", "{{ Redirect_2_New_External_URL }}").attr("target","{% if Redirect_2_Window contains 'ew' %}_blank{% else %}_self{% endif %}");
+  $("a[href^='/{{ Redirect_3_Original_Page_URL_Slug }}']").prop("href", "{{ Redirect_3_New_External_URL }}").attr("target","{% if Redirect_3_Window contains 'ew' %}_blank{% else %}_self{% endif %}");
+  $("a[href^='/{{ Redirect_4_Original_Page_URL_Slug }}']").prop("href", "{{ Redirect_4_New_External_URL }}").attr("target","{% if Redirect_4_Window contains 'ew' %}_blank{% else %}_self{% endif %}");  
+
+})(jQuery);
+      </script>
+        
+
+</body>
+</html>

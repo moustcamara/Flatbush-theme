@@ -1,0 +1,167 @@
+{{ ------------BEGIN THEME SETTINGS AND CONTROLS------------ }}
+
+{% assign: Theme_Fiend_Lab_UserName = 'YourUserName' %}
+{% assign: Image_Source = 'Self-hosted' %} {{ Options: 'Lab' or 'Self-hosted' }}
+
+{{ ----HOME PAGE BANNER SLIDESHOW SETTINGS---- }}
+
+{% assign: Show_Slideshow = 'Yes' %} {{ Options: 'Yes' or 'No' }}
+
+{% assign: Number_of_Banner-Slides = 3 %} {{ Options: 1 to 10 (Number of slides in your slideshow) }}
+
+{% assign: Slider_Speed = 4 %} 
+{{ Note: Enter the number (in seconds) of the speed that you want the slider to progress at. DO NOT include quotation ('') marks }}
+
+{% assign: Slider_Animation_Effect = 'slide' %} {{ Options: 'fade' or 'slide' }}
+
+{{ Note: Choosing 'Lab' as your Image_Source means that your slideshow will use the images you uploaded to your Theme Fiend Lab account  }}
+
+{{ Note:  Only set Slide_Image_Url if you chose 'Self-hosted' Option }}
+{{ Images uploaded to Theme Fiend Lab account will appear automatically if named by the order they appear in slideshow }}
+{{ (ex. home-banner-01.jpg, home-banner-02.jpg, home-banner-03.jpg, etc.  }}
+
+{{ --BEGIN HOME PAGE BANNER/SLIDESHOW LINKS-- }}
+
+{% assign: Banner-Slide_Link_1 = '/products' %} {{ ---- }} {% assign: Banner-Slide_Image_Url_1 = 'http://themefienddemos.com/flatbush/_images/flatbush-slide-1.png' %}
+
+{% assign: Banner-Slide_Link_2 = '/products' %} {{ ---- }} {% assign: Banner-Slide_Image_Url_2 = 'http://themefienddemos.com/flatbush/_images/flatbush-slide-2.png' %}
+
+{% assign: Banner-Slide_Link_3 = '/products' %} {{ ---- }} {% assign: Banner-Slide_Image_Url_3 = 'http://themefienddemos.com/flatbush/_images/flatbush-slide-3.png' %}
+
+{% assign: Banner-Slide_Link_4 = '/products' %} {{ ---- }} {% assign: Banner-Slide_Image_Url_4 = 'http://example.com/image.jpg' %}
+
+{% assign: Banner-Slide_Link_5 = '/products' %} {{ ---- }} {% assign: Banner-Slide_Image_Url_5 = 'http://example.com/image.jpg' %}
+
+{% assign: Banner-Slide_Link_6 = '/products' %} {{ ---- }} {% assign: Banner-Slide_Image_Url_6 = 'http://example.com/image.jpg' %}
+
+{% assign: Banner-Slide_Link_7 = '/products' %} {{ ---- }} {% assign: Banner-Slide_Image_Url_7 = 'http://example.com/image.jpg' %}
+
+{% assign: Banner-Slide_Link_8 = '/products' %} {{ ---- }} {% assign: Banner-Slide_Image_Url_8 = 'http://example.com/image.jpg' %}
+
+{% assign: Banner-Slide_Link_9 = '/products' %} {{ ---- }} {% assign: Banner-Slide_Image_Url_9 = 'http://example.com/image.jpg' %}
+
+{% assign: Banner-Slide_Link_10 = '/products' %} {{ ---- }} {% assign: Banner-Slide_Image_Url_10 = 'http://example.com/image.jpg' %}
+
+{{ --END HOME PAGE BANNER/SLIDESHOW LINKS-- }}
+
+
+{{ ----PRODUCTS DISPLAY SETTINGS---- }}
+
+{% assign: Show_Products_On_Home_Page = 'Yes' %} {{ Options: 'Yes' or 'No' }}
+
+{% assign: Products_Per_Row = 4 %} {{ Options: 2 to 5 }}
+
+{% assign: Home_Page_Products_Heading = 'Featured Products' %}
+
+
+{{ ------------END THEME SETTINGS AND CONTROLS------------ }}
+
+
+ {% assign: Lab = 'http://themefiend.com/lab/images/' %}
+
+{% assign No_Img = 'http://themefiend.com/images/no.png' %}
+
+{% unless Show_Slideshow contains 'o' %}
+
+<div id="home-flex" class="flexslider">
+  <ul class="slides">
+{% if Image_Source contains 'elf' %}    {% if Number_of_Banner-Slides >= 1 %}<li><a href="{{ Banner-Slide_Link_1 }}"><img src="{{ Banner-Slide_Image_Url_1 }}" ></a></li>{% endif %}
+{% if Number_of_Banner-Slides >= 2 %}<li><a href="{{ Banner-Slide_Link_2 }}"><img src="{{ Banner-Slide_Image_Url_2 }}" ></a></li>{% endif %}
+{% if Number_of_Banner-Slides >= 3 %}<li><a href="{{ Banner-Slide_Link_3 }}"><img src="{{ Banner-Slide_Image_Url_3 }}" ></a></li>{% endif %}
+{% if Number_of_Banner-Slides >= 4 %}<li><a href="{{ Banner-Slide_Link_4 }}"><img src="{{ Banner-Slide_Image_Url_4 }}" ></a></li>{% endif %}
+{% if Number_of_Banner-Slides >= 5 %}<li><a href="{{ Banner-Slide_Link_5 }}"><img src="{{ Banner-Slide_Image_Url_5 }}" ></a></li>{% endif %}
+{% if Number_of_Banner-Slides >= 6 %}<li><a href="{{ Banner-Slide_Link_6 }}"><img src="{{ Banner-Slide_Image_Url_6 }}" ></a></li>{% endif %}
+{% if Number_of_Banner-Slides >= 7 %}<li><a href="{{ Banner-Slide_Link_7 }}"><img src="{{ Banner-Slide_Image_Url_7 }}" ></a></li>{% endif %}
+{% if Number_of_Banner-Slides >= 8 %}<li><a href="{{ Banner-Slide_Link_8 }}"><img src="{{ Banner-Slide_Image_Url_8 }}" ></a></li>{% endif %}
+{% if Number_of_Banner-Slides >= 9 %}<li><a href="{{ Banner-Slide_Link_9 }}"><img src="{{ Banner-Slide_Image_Url_9 }}" ></a></li>{% endif %}
+{% if Number_of_Banner-Slides >= 10 %}<li><a href="{{ Banner-Slide_Link_10 }}"><img src="{{ Banner-Slide_Image_Url_10 }}" ></a></li>{% endif %}
+{% endif %}
+{% if Image_Source == 'Lab' or Image_Source == 'lab' %}
+{% assign: Lab = 'http://themefiend.com/lab/images/' %}
+{% capture Slide_Image %}<img src="{{ Lab }}{{ Theme_Fiend_Lab_UserName }}/home-banner-01.jpg"  />{% endcapture %}
+{% if Number_of_Banner-Slides >= 1 %}<li><a href="{{ Banner-Slide_Link_1 }}">{{ Slide_Image }}</a></li>{% endif %}
+{% if Number_of_Banner-Slides >= 2 %}<li><a href="{{ Banner-Slide_Link_2 }}">{{ Slide_Image | replace: "-01", "-02" }}</a></li>{% endif %}
+{% if Number_of_Banner-Slides >= 3 %}<li><a href="{{ Banner-Slide_Link_3 }}">{{ Slide_Image | replace: "-01", "-03" }}</a></li>{% endif %}
+{% if Number_of_Banner-Slides >= 4 %}<li><a href="{{ Banner-Slide_Link_4 }}">{{ Slide_Image | replace: "-01", "-04" }}</a></li>{% endif %}
+{% if Number_of_Banner-Slides >= 5 %}<li><a href="{{ Banner-Slide_Link_5 }}">{{ Slide_Image | replace: "-01", "-05" }}</a></li>{% endif %}
+{% if Number_of_Banner-Slides >= 6 %}<li><a href="{{ Banner-Slide_Link_6 }}">{{ Slide_Image | replace: "-01", "-06" }}</a></li>{% endif %}
+{% if Number_of_Banner-Slides >= 7 %}<li><a href="{{ Banner-Slide_Link_7 }}">{{ Slide_Image | replace: "-01", "-07" }}</a></li>{% endif %}
+{% if Number_of_Banner-Slides >= 8 %}<li><a href="{{ Banner-Slide_Link_8 }}">{{ Slide_Image | replace: "-01", "-08" }}</a></li>{% endif %}
+{% if Number_of_Banner-Slides >= 9 %}<li><a href="{{ Banner-Slide_Link_9 }}">{{ Slide_Image | replace: "-01", "-09" }}</a></li>{% endif %}
+{% if Number_of_Banner-Slides >= 10 %}<li><a href="{{ Banner-Slide_Link_10 }}">{{ Slide_Image | replace: "-01", "-10" }}</a></li>{% endif %}
+{% endif %}
+    </ul>
+</div>
+
+{% endunless %}
+
+{% if Show_Products_On_Home_Page != 'No' %}
+                    
+{% if products.featured != blank %}
+
+<h3 id="featured-products-text">{{ Home_Page_Products_Heading }}</h3>
+
+{% assign: Products_Margin = 1 %}  {{ Options: 0 | 0.5 | 1 | 1.5 | 2 | 2.5 | 3 }} 
+
+{% assign: ppr = Products_Per_Row %}
+{% assign: pmg = Products_Margin %}
+
+{% capture p_mrgn %}{% if pmg == 0 %}mg-O{% endif %}{% if pmg == 0.5 %}mg-OpV{% endif %}{% if pmg == 1 %}mg-I{% endif %}{% if pmg == 1.5 %}mg-IpV{% endif %}{% if pmg == 2 %}mg-II{% endif %}{% if pmg == 2.5 %}mg-IIpV{% endif %}{% if pmg == 3 %}mg-III{% endif %}{% endcapture %}
+{% capture p_pr %}{% if ppr == 2 %}ii_ppr{% endif %}{% if ppr == 3 %}iii_ppr{% endif %}{% if ppr == 4 %}iv_ppr{% endif %}{% if ppr == 5 %}v_ppr{% endif %}{% endcapture %}
+
+<div id="products" class="{{ p_pr }} {{ p_mrgn }}">
+	{% for product in products.featured %}
+	<div id="product-{{ forloop.index }}" class="{{ product.css_class }} {% if ppr == 2 %}{% cycle '', 'last' %}{% elsif ppr == 3 %}{% cycle '', '', 'last' %}{% elsif ppr == 4 %}{% cycle '', '', '', 'last' %}{% elsif ppr == 5 %}{% cycle '', '', '', '', 'last' %}{% endif %}">
+		<a href="{{ product.url }}" title="View {{ product.name | escape }}" class="product-a">  
+                  {% if product.on_sale %}<div id="sale"><span class="onsale">On Sale</span></div>{% endif %}
+                  {% case product.status %}
+                {% when 'sold-out' %}<div id="sold"><span class="soldout">Sold Out</span></div>
+                {% when 'coming-soon' %}<div id="coming-soon"><span class="soon">Coming Soon</span></div>
+                {% endcase %} 
+                 <img class="product-img" src="{{ product.image | product_image_url }}" alt="Image of {{ product.name | escape }}" />
+                  <span class="stilt"></span>
+                  
+
+			<div class="product-info">
+				<h3 class="product-title"><span>{{ product.name }}</span></h3>
+				<p class="product-price"><span>{{ product.price | money_with_sign }}</span></p>
+			</div>
+		</a>
+	</div>
+	{% endfor %}
+</div>
+
+{% else %}
+
+<p class="alert-noproducts"><span>No products found.</span></p>
+
+{% endif %}
+{% endif %}
+
+
+
+
+{{ -----BEGIN SLIDESHOW CONFIGURATION---- }}
+   
+<script type="text/javascript" charset="utf-8">  
+   
+   (function($) {
+      $(document).ready(function(){
+  
+      $('.flexslider').fitVids().flexslider({
+        animation: "{{ Slider_Animation_Effect }}",
+      slideshowSpeed: {{ Slider_Speed }}000,
+       animationLoop: true,
+        slideshow: true,
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+    });
+   })(jQuery);
+</script>
+  
+{{ -----END SLIDESHOW CONFIGURATION---- }}
+
+  
+    

@@ -1,0 +1,13 @@
+{{ ------------BEGIN THEME SETTINGS AND CONTROLS------------ }}
+
+{% assign: Successful_Order_Heading_Text = "Your order has been successfully placed." %}
+
+{% assign: Successful_Order_Message = "We'll start working right away on getting your order out to you. Please <a href='/contact'>contact us</a> if you have any questions or concerns." %}
+
+
+{{ ------------END THEME SETTINGS AND CONTROLS------------ }}
+
+<div class="success-message">
+<h2>{{ Successful_Order_Heading_Text }}</h2>
+<p>{{ Successful_Order_Message }}</p>
+</div>

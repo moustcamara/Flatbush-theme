@@ -1,0 +1,229 @@
+{{ ------------BEGIN THEME SETTINGS AND CONTROLS------------ }}
+
+{% assign: Product_Options_Text = "Choose an Option" %}
+{% assign: Add_to_Cart_Text = "Add to Cart" %}
+
+{% assign: Product_Options_Type = 'Radio Buttons' %} {{ Options: 'Select' or 'Radio Buttons' }}
+
+{{ --RELATED PRODUCTS AREA -- }}
+
+{% assign: Related_Products_Text = "Recommended Products" %}
+{% assign: Related_Products_Per_Row = 3 %} {{ Options: 2 to 5 }}
+
+{{ ------------END THEME SETTINGS AND CONTROLS------------ }}
+
+<div id="product-content" class="row-fluid">
+  
+<div class="flexslider visible-phone">
+<ul class="slides">
+{% for image in product.images %} <li><img src="{{ image | product_image_url }}"></li>{% endfor %}
+</ul>
+</div>
+  
+<div id="product_images" class="hidden-phone">
+          <li class="featured" {% if product.image_count <= 1 %}style="width:100%"{% endif %}>
+              <a href="{{ product.image | product_image_url }}" >
+                {% if product.on_sale %}<div id="sale"><span class="onsale">On Sale</span></div>{% endif %}
+                {% case product.status %}
+                {% when 'sold-out' %}<div id="sold"><span class="soldout">Sold Out</span></div>
+                {% when 'coming-soon' %}<div id="coming-soon"><span class="soon">Coming Soon</span></div>
+                {% endcase %} 
+                <div id="magnify"></div>
+              <img src="{{ product.image | product_image_url }}" alt="Image of {{ product.name | escape }}" />
+               </a>
+          </li>
+          {% if product.image_count > 1 %}
+          	<ul id="product_thumbnails">
+                  
+                  {% for image in product.images %}                  
+                  <li class="thumbnail">
+                    <a href="{{ image | product_image_url }}" onclick='return false;'>
+                    <img src="{{ image | product_image_url }}" alt="Image of {{ product.name | escape }}" />
+                    </a>
+                  </li>
+                  {% endfor %}
+        </ul>
+          {% endif %}
+          
+
+	</div>
+
+	
+	<div id="product-details" class="span5">
+		<h3 class="name"><span>{{ product.name }}</span></h3>
+          <h3 class="price">{% if product.max_price != product.default_price and product.on_sale %}<del>{{ product.max_price | money_with_sign }}</del>{% endif %}<span>{{ product.price | money_with_sign }}</span></h3>
+          
+     <!-- AddToAny BEGIN -->
+<div class="a2a_kit a2a_default_style">
+<a class="a2a_dd" href="http://www.addtoany.com/share_save">Share</a>
+<span class="a2a_divider"></span>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_twitter"></a>
+<a class="a2a_button_tumblr"></a>
+<a class="a2a_button_pinterest"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END -->
+          
+
+          {% if product.description != blank %}
+		<div id="product-desc" class='info'>
+                               
+                  <div class="inner-info">
+			{{ product.description | paragraphs }}
+                  </div>
+
+		</div>
+	      {% endif %}
+     
+	{% case product.status %}
+		
+	{% when 'active' %}
+						
+		<form id="product-form" method="post" action="/cart">
+					
+			{% if product.has_default_option %}
+			
+			{{ product.option | hidden_option_input }}
+			
+			{% else %}
+			
+			<div id="product-options" class="options">
+                          <span>{{ Product_Options_Text }}</span>
+                          {% if Product_Options_Type contains 'adio' %}{{ product.options_in_stock | options_radio }}{% endif %}
+                          {% if Product_Options_Type contains 'elect' %}{{ product.options_in_stock | options_select }}{% endif %}
+			</div>
+			
+			{% endif %}
+			
+			<button id="product-addtocart" name="submit" type="submit"><span>{{ Add_to_Cart_Text }}</span></button>
+
+		</form>
+          
+		
+	
+		
+	{% when 'coming-soon' %}
+		
+		<div class="soon"> 
+			<h4><span>Coming Soon</span></h4>
+		</div>	
+		
+	{% endcase %}
+          
+		
+	</div>
+  
+	
+{{ -----BEGIN RELATED PRODUCTS SECTION---- }}
+	
+  
+
+
+{% assign currentProduct = product.id %}
+ 
+{% assign counter = 0 %}
+	
+{% for category in product.categories limit:1 %}
+
+{% assign: Products_Margin = 1 %}  {{ Options: 0 | 0.5 | 1 | 1.5 | 2 | 2.5 | 3 }} 
+
+{% assign: ppr = Related_Products_Per_Row %}
+{% assign: pmg = Products_Margin %}
+  
+{% capture relpro %}{{ ppr | plus: 1 }}{% endcapture %}  
+  
+{% capture p_mrgn %}{% if pmg == 0 %}mg-O{% endif %}{% if pmg == 0.5 %}mg-OpV{% endif %}{% if pmg == 1 %}mg-I{% endif %}{% if pmg == 1.5 %}mg-IpV{% endif %}{% if pmg == 2 %}mg-II{% endif %}{% if pmg == 2.5 %}mg-IIpV{% endif %}{% if pmg == 3 %}mg-III{% endif %}{% endcapture %}
+{% capture p_pr %}{% if ppr == 2 %}ii_ppr{% endif %}{% if ppr == 3 %}iii_ppr{% endif %}{% if ppr == 4 %}iv_ppr{% endif %}{% if ppr == 5 %}v_ppr{% endif %}{% endcapture %}
+
+<div id="products" class="{{ p_pr }} {{ p_mrgn }}">
+          
+     <h3 id="related-products-text">{{ Related_Products_Text }}</h3>
+          
+    <div class="related_products {{ category.permalink }} row-fluid">
+        {% for product in category.products limit: relpro %}
+      
+       {% if product.id != currentProduct and counter < 3 %}
+        
+        <div class="{{ product.css_class }} {% if ppr == 2 %}{% cycle '', 'last' %}{% elsif ppr == 3 %}{% cycle '', '', 'last' %}{% elsif ppr == 4 %}{% cycle '', '', '', 'last' %}{% elsif ppr == 5 %}{% cycle '', '', '', '', 'last' %}{% endif %}" id="product">
+        <a href="{{ product.url }}" title="View {{ product.name | escape }}" class="product-a">
+          {% if product.on_sale %}<div id="sale"><span class="onsale">On Sale</span></div>{% endif %}
+                  {% case product.status %}
+                {% when 'sold-out' %}<div id="sold"><span class="soldout">Sold Out</span></div>
+                {% when 'coming-soon' %}<div id="coming-soon"><span class="soon">Coming Soon</span></div>
+                {% endcase %} 
+
+           <img class="product-img" src="{{ product.image | product_image_url }}" alt="Image of {{ product.name | escape }}" />
+          
+	         <div class="product-info">
+				<h3 class="product-title"><span>{{ product.name }}</span></h3>
+				<p class="product-price"><span>{{ product.price | money_with_sign }}</span></p>
+			</div>
+            
+        </a>
+        </div>
+
+         
+            {% endif %}
+
+          
+        {% endfor %}
+      
+      
+        </div>
+    
+{% endfor %}
+</div>
+  
+</div>
+
+{{ -----END RELATED PRODUCTS SECTION---- }}
+
+<link rel="stylesheet" type="text/css" href="https://s3.amazonaws.com/themefiend/theme_plugins/colorbox/colorbox.css">
+<script type="text/javascript" src="https://s3.amazonaws.com/themefiend/theme_plugins/colorbox/jquery.colorbox-min.js"></script>
+<script type="text/javascript" charset="utf-8">
+   
+   (function($) {
+      $(document).ready(function(){      
+  
+      $('.flexslider').flexslider({
+        animation: "slide",
+useCSS: false,
+        slideshowSpeed: 1000000000,
+        useCSS: false,
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+  
+  
+  $(".thumbnail img").click(function(){
+      $(".featured img").attr('src',$(this).attr('src'));
+});
+  
+  
+  $(".thumbnail a").click(function(){
+    $(".featured a").attr('href',$(this).attr('href'));
+});
+          $(".featured a").colorbox();
+  
+  
+  if($.trim($(".related_products").html())=='') {
+  $('#related_products').remove();
+  }
+  
+  
+
+                    
+$('#product-desc').removeClass('hide');
+          
+    });
+   })(jQuery);
+</script>
+
+
+
+
+  
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=YOUR-PROFILE-ID"></script>
+   

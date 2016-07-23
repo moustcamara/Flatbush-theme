@@ -1,0 +1,84 @@
+{{ -----BEGIN SETTINGS AND CONTROLS----- }}
+
+{% assign: Theme_Fiend_Lab_UserName = 'YourUserName' %}
+{% assign: Image_Source = 'Lab' %} {{ Options: 'Lab' or 'Self-hosted' }}
+
+{% assign: Number_of_Products = 3 %}
+
+{% assign: Products_Per_Row = 3 %} {{ Options: 2 to 5 }}
+
+
+{{ --BEGIN CATEGORY/ARTIST BANNER SETTINGS--}}
+
+{% assign: Show_Category_Page_Banners = 'No' %}
+{% assign: Show_Artist-Brand_Page_Banners = 'No' %}
+
+{% assign: Hide_Category_and_Artist_Title = 'No' %}
+
+{{ --END CATEGORY/ARTIST BANNER SETTINGS--}}
+
+{{ -----END SETTINGS AND CONTROLS----- }}
+
+
+{% if Image_Source != 'Self-hosted' %}
+
+{% if Show_Category_Page_Banners contains 'es' %}
+{% if page.full_url contains 'category' %}{% if Hide_Category_and_Artist_Title == 'Yes' %}<style type="text/css">.category-name, .page-name {display:none;}</style>{% endif %} <h3 class="category_header" style="text-align:center;"><img src="http://themefiend.com/lab/images/{{ Theme_Fiend_Lab_UserName }}{{ page.full_url | remove: 'category/' | remove: store.url }}_banner.jpg" ></h3>{% endif %}
+{% endif %}
+
+{% if Show_Artist-Brand_Page_Banners contains 'es' %}
+{% if page.full_url contains 'artist' %}{% if Hide_Category_and_Artist_Title == 'Yes' %}<style type="text/css">.category-name, .page-name {display:none;}</style>{% endif %} <h3 class="category_header" style="text-align:center;"><img src="http://themefiend.com/lab/images/{{ Theme_Fiend_Lab_UserName }}{{ page.full_url | remove: 'artist/' | remove: store.url }}_banner.jpg"></h3>{% endif %}
+{% endif %}
+
+{% endif %}
+
+{% assign: Products_Margin = 1 %}  {{ Options: 0 | 0.5 | 1 | 1.5 | 2 | 2.5 | 3 }} 
+
+{% assign: ppr = Products_Per_Row %}
+{% assign: pmg = Products_Margin %}
+
+{% capture p_mrgn %}{% if pmg == 0 %}mg-O{% endif %}{% if pmg == 0.5 %}mg-OpV{% endif %}{% if pmg == 1 %}mg-I{% endif %}{% if pmg == 1.5 %}mg-IpV{% endif %}{% if pmg == 2 %}mg-II{% endif %}{% if pmg == 2.5 %}mg-IIpV{% endif %}{% if pmg == 3 %}mg-III{% endif %}{% endcapture %}
+{% capture p_pr %}{% if ppr == 2 %}ii_ppr{% endif %}{% if ppr == 3 %}iii_ppr{% endif %}{% if ppr == 4 %}iv_ppr{% endif %}{% if ppr == 5 %}v_ppr{% endif %}{% endcapture %}
+
+<div id="products" class="{{ p_pr }} {{ p_mrgn }}">
+     {% get products from products.all order: 'newest' limit: Number_of_Products %}
+  {% for product in products %}
+	<div id="product-{{ forloop.index }}" class="{{ product.css_class }} span3 {% if ppr == 2 %}{% cycle '', 'last' %}{% elsif ppr == 3 %}{% cycle '', '', 'last' %}{% elsif ppr == 4 %}{% cycle '', '', '', 'last' %}{% elsif ppr == 5 %}{% cycle '', '', '', '', 'last' %}{% endif %}">
+		<a href="{{ product.url }}" title="View {{ product.name | escape }}" class="product-a">  
+                  {% if product.on_sale %}<div id="sale"><span class="onsale">On Sale</span></div>{% endif %}
+                 {% case product.status %}
+                  {% when 'sold-out' %}<div id="sold"><span class="soldout">Sold Out</span></div>
+                  {% when 'coming-soon' %}<div id="coming-soon"><span class="soon">Coming Soon</span></div>
+                  {% endcase %}
+                 <img class="product-img" src="{{ product.image | product_image_url }}" alt="Image of {{ product.name | escape }}" />
+                  <span class="stilt"></span>
+                  
+
+			<div class="product-info">
+				<h3 class="product-title"><span>{{ product.name }}</span></h3>
+				<p class="product-price"><span>{{ product.price | money_with_sign }}</span></p>
+			</div>
+		</a>
+	</div>
+	{% endfor %}
+{% endget %}
+</div>
+
+
+
+
+<script type="text/javascript">
+var k = jQuery.noConflict();
+
+k(document).ready(function() {
+
+// Or, hide them
+k("img").error(function(){
+      k(this).hide();
+});
+     k("a").each(function() {
+         k(this).attr("href", k(this).attr("href").replace("http://yourshop.bigcartel.com/", "{{ store.url }}")
+});
+  
+});  
+</script>

@@ -1,0 +1,75 @@
+{{ ------------BEGIN THEME SETTINGS AND CONTROLS------------ }}
+
+{% assign: Background_Color = "#ffffff" %}
+{% assign: Text_Color = "#333333" %}
+
+{% assign: Maintenance_Message_Heading = "Coming Soon" %}
+{% assign: Maintenance_Message_Details = "We will be back shortly" %}
+
+{% assign: Use_Logo_Font = "Yes" %} {{ Options: 'Yes' or 'No' }}
+{% assign: Heading_Font = "Roboto Condensed" %}
+
+{% assign: Details_Font = "Roboto Condensed" %}
+
+{{ ------------END THEME SETTINGS AND CONTROLS------------ }}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>{{ store.name }}  &mdash;  Maintenance</title>
+  <style type="text/css">
+    
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700);
+
+    
+    body {
+      margin: 100px;
+      text-align: center;
+      color: {{ Text_Color }};
+      background: {{ Background_Color }};
+      }
+    
+    h1 {
+    font-family: {% if Use_Logo_Font contains 'es' %}Roboto Condensed{% else %}{{ Heading_Font }}{% endif %};
+    font-size: 100px;
+    text-transform: uppercase;
+    font-style: italic;
+    line-height: 100%;
+    margin: 20px 0px;
+     }
+    
+
+    h3 {
+      font-family: {{ Heading_Font }};
+      font-weight: 300;
+      font-size: 50px;
+      padding: 0px;
+      background-color: {{ Background_Color }};
+      text-transform: uppercase;
+      width: 80%;
+      margin: 5px;
+      }
+    
+    p {
+    font-family: {{ Details_Font }};
+    font-weight: 300;
+    }
+    
+  </style>
+  {{ head_content }}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>   
+</head>
+<body>
+  
+
+  
+  <div class="maintenance-block" align="center" style="margin:20px;">
+   <h1>{% if theme.image == blank %}<span>{{ store.name }}</span>{% else %}<img src="{{ theme.image.url }}" />{% endif %}</h1>
+    <h3>{{ Maintenance_Message_Heading }}</h3>
+    <p>{{ Maintenance_Message_Details }}</p>
+  </div>
+
+</body>
+</html>
+ 

@@ -1,0 +1,109 @@
+{{ ------------BEGIN THEME SETTINGS AND CONTROLS------------ }}
+
+{% assign: Update_Total_Text = "Update Total" %}
+{% assign: Checkout_Text = "Checkout" %}
+{% assign: Continue_Shopping_Text = "Continue Shopping" %}
+{% assign: Remove_Text = "X" %}
+
+
+{% assign: Show_Product_Thumbnail = 'Yes' %} {{ Options: 'Yes' or 'No' }}
+
+{{ ------------END THEME SETTINGS AND CONTROLS------------ }}
+
+{% if cart.items != blank %}
+<div id="cart-content">
+	<form id="cart-form" method="post" action="/cart">
+          
+          <table class="table">
+              <thead>
+                <tr>
+                  <th class="item-name" {% if Show_Product_Thumbnail contains 'es' %}colspan="2"{% endif %}>Item</th>
+                  <th class="item-price">Price</th>
+                  <th class="item-qty">Qty</th>
+                  <th class="item-total">Total</th>
+                  <th class="item-remove hidden-phone"></th>
+                </tr>
+              </thead>
+              <tbody>
+            {% for item in cart.items %}
+                <tr id="item-{{ item.id }}">
+                  {% if Show_Product_Thumbnail contains 'es' %}
+                  <td class="item-img">
+                      <a href="{{ item.product.url }}" title="View {{ item.product.name | escape }}">
+                      <img class="image" src="{{ item.product.image | product_image_url }}" style="width:80px" >
+                      </a>  
+                  </td>
+                  {% endif %}
+                  <td class="item-name">
+                    <a href="{{ item.product.url }}">{{ item.name }}</a>
+                  </td>
+                  <td class="item-price">{{ item.unit_price | money_with_sign }}</td>
+                  <td class="item-qty">{{ item | item_quantity_input }}</td>
+                  <td class="item-total">{{ item.price | money_with_sign }}</td>
+                  <td class="item-remove hidden-phone"><a href="#" class="remove-btn" title="Remove item"><span>{{ Remove_Text }}</span></a></td>
+                </tr>
+            {% endfor %}
+              </tbody>
+            </table>
+		
+		<div id="cart-footer">
+
+			<div class="cart-update">
+				<button id="update-btn-footer" class="update-btn" name="update" type="submit" title="Update Total"><span>{{ Update_Total_Text }}</span></button>
+			</div>
+			
+			{% if cart.shipping.strict %}
+			<div class="cart-shipping">
+				<label for="country"><span>Shipping to:</span></label> {{ store.country | country_select }}
+			</div>
+			{% endif %}
+	
+			
+			{% if cart.discount.enabled %}
+			<div class="cart-discount">
+                          <label>Discount code: {{ cart.discount | discount_code_input | replace: ">" , " placeholder='Enter Discount Code' >" }}<button id="update-btn-footer" class="update-btn apply-discount" name="update" type="submit" title="Apply Discount"><span>Apply</span></button></label>
+			</div>
+			{% endif %}
+                  
+			
+		<div class="cart-total">
+                          	<h3 style="font-size:100%"><span class="total">Subtotal: </span><span class="total-price">{{ cart.total | minus: cart.shipping.amount | money_with_sign }}</span></h3>
+			 {% if cart.shipping.enabled %}
+                          <div id="cart-shipping-tax">
+					<p class="shipping-amount"><span class="shipping">Shipping:</span><span class="total-shipping">{% if cart.shipping.pending %}_ _. _ _{% endif %}{% unless cart.shipping.pending %}{{ cart.shipping.amount | money_with_sign }}{% endunless %}</span></p>
+				</div>
+                          {% endif %}
+                          
+                          
+                          {% if cart.discount.amount > 0 %}<h3 class="discount-info"><span class="discount">Discount ({{ cart.discount.name }}): </span><span class="total-discount">-{{ cart.discount.amount | money_with_sign }}</span></h3>{% endif %}
+                          
+                           {% unless cart.shipping.enabled %}
+                          <h3><span class="total">Total: </span><span class="total-price">{{ cart.price | money_with_sign }}</span></h3>
+				<p><span>+ applicable shipping</span></p>
+                          {% else %}
+                          
+                          <h3><span class="total">Grand Total: </span><span class="total-price">{{ cart.total | money_with_sign }}</span></h3>
+                          {% endunless %}
+			
+					
+			
+			</div>
+                  
+		<div class="cart-options">
+				<button class="checkout-btn" type="submit" title="Checkout" name="checkout"><span>{{ Checkout_Text }}</span></button>
+
+                  <div id="continue-shopping"><a href="/products">&larr; {{ Continue_Shopping_Text }}</a></div>
+                          
+                          </div>
+                  
+		</div>
+  </form>
+          
+  
+
+</div>
+
+{% else %}
+
+<p class="alert-noitems"><span>You don&#8217;t have any items in your cart.</span><a href="/products">Start shopping</a></p>
+{% endif %}

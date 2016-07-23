@@ -1,0 +1,374 @@
+{{ ---------BEGIN ADD-ON SETTINGS AND CONTROLS----------- }}
+
+{% assign: Theme_Fiend_Lab_UserName = 'YourUserName' %}
+{% assign: Image_Source = 'Self-hosted' %} {{ Options: 'Lab' or 'Self-hosted' }}
+
+{{ ----OVERALL GRID SETTINGS---- }}
+
+{% assign: Show_Grid_Intro_Text = 'No' %} {{ Options: 'Yes' or 'No' }}
+
+{{ --GRID ALIGNMENT SETTINGS-- }}
+{% assign: Number_of_Grid_Items = 6 %} {{ Options: 1 to 12 }}
+{% assign: Grid_Items_Per_Row = 3 %}  {{ Options: 2 to 4 }}
+{% assign: Grid_Items_Margin = 3 %}  {{ Options: 0 | 0.5 | 1 | 1.5 | 2 | 2.5 | 3 }} {{ Note: In percentages }}
+
+{{ --GRID TEXT SETTINGS-- }}
+{% assign: Titles_Font_Size = 18 %} 
+{% assign: Show_Grid_Item_Text = 'Yes' %} {{ Options: 'Yes' or 'No' }}
+{% assign: Grid_Item_Text_Arrangement = 'Below Image' %} {{ Options: 'Below Image', 'Above Image' or 'Title Over Image' }}
+{% assign: Grid_Item_Text_Alignment = 'Center' %} {{ Options: 'Left', 'Center', 'Right' }}
+{% assign: Show_Grid_Item_Title_Text = 'Yes' %} {{ Options: 'Yes' or 'No' }}
+{% assign: Show_Grid_Item_Description_Text = 'Yes' %} {{ Options: 'Yes' or 'No' }}
+
+{{ --GRID IMAGE SETTINGS-- }}
+{% assign: Grid_Image_Rounded_Corners = 'No' %} {{ Options: 'Yes' or 'No' }}
+{% assign: Grid_Image_Links = 'Yes' %} {{ Options: 'Yes' or 'No' }}
+{% assign: Grid_Image_Link_Type = 'Page' %} {{ Options: 'Image' or 'Page' }}
+{% assign: Grid_Image_Link_Behavior = 'New Window' %}  {{ Options: 'Popup' , 'Same Window' or 'New Window' }}
+{% assign: Grid_Image_Link_Popup_Navigation = 'Yes' %} {{ Options: 'Yes' or 'No' }}
+
+
+{% capture Grid_Intro_Text %}<grid-intro_text>
+<!--Enter Grid Item 1 Text Below-->
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+<!-- End --></grid-intro_text>{% endcapture %}
+
+{{ ----BEGIN INDIVIDUAL GRID ITEM SETTINGS---- }}
+
+{{ --GRID ITEM 1 SETTINGS-- }}
+
+{% assign: Grid_Item_1_Image_Url = 'http://themefienddemos.com/add-ons/content-grid/_images/mag1.JPG' %}
+{% assign: Grid_Item_1_Page_Url = 'http://themefiend.com' %}
+{% assign: Grid_Item_1_Title = "Details" %}
+{% capture Grid_Item_1_Text %}<gi-1_text>
+<!--Enter Grid Item 1 Text Below-->
+May 2014 Issue | www.details.com
+<!-- End --></gi-1_text>{% endcapture %}
+
+{{ --GRID ITEM 2 SETTINGS-- }}
+
+{% assign: Grid_Item_2_Image_Url = 'http://themefienddemos.com/add-ons/content-grid/_images/mag2.JPG' %}
+{% assign: Grid_Item_2_Page_Url = 'http://support.themefiend.com' %}
+{% assign: Grid_Item_2_Title = "W Magazine" %}
+{% capture Grid_Item_2_Text %}<gi-2_text>
+<!--Enter Grid Item 2 Text Below-->
+Fall 2013 Issue | www.wmagazine.com
+<!-- End --></gi-2_text>{% endcapture %}
+
+{{ --GRID ITEM 3 SETTINGS-- }}
+
+{% assign: Grid_Item_3_Image_Url = 'http://themefienddemos.com/add-ons/content-grid/_images/mag3.JPG' %}
+{% assign: Grid_Item_3_Page_Url = 'http://twitter.com/themefiend' %}
+{% assign: Grid_Item_3_Title = "Elle" %}
+{% capture Grid_Item_3_Text %}<gi-3_text>
+<!--Enter Grid Item 3 Text Below-->
+January 2014 Issue | www.elle.com
+<!-- End --></gi-3_text>{% endcapture %}
+
+{{ --GRID ITEM 4 SETTINGS-- }}
+
+{% assign: Grid_Item_4_Image_Url = 'http://themefienddemos.com/add-ons/content-grid/_images/mag4.JPG' %}
+{% assign: Grid_Item_4_Page_Url = 'http://themefiend.com' %}
+{% assign: Grid_Item_4_Title = "WWD" %}
+{% capture Grid_Item_4_Text %}<gi-4_text>
+<!--Enter Grid Item 4 Text Below-->
+August 2013 Issue | www.wwd.com
+<!-- End --></gi-4_text>{% endcapture %}
+
+{{ --GRID ITEM 5 SETTINGS-- }}
+
+{% assign: Grid_Item_5_Image_Url = 'http://themefienddemos.com/add-ons/content-grid/_images/mag5.JPG' %}
+{% assign: Grid_Item_5_Page_Url = 'http://support.themefiend.com' %}
+{% assign: Grid_Item_5_Title = "Instyle" %}
+{% capture Grid_Item_5_Text %}<gi-5_text>
+<!--Enter Grid Item 5 Text Below-->
+Spring 2014 Issue | www.instyle.com
+<!-- End --></gi-5_text>{% endcapture %}
+
+{{ --GRID ITEM 6 SETTINGS-- }}
+
+{% assign: Grid_Item_6_Image_Url = 'http://themefienddemos.com/add-ons/content-grid/_images/mag6.JPG' %}
+{% assign: Grid_Item_6_Page_Url = 'http://twitter.com/themefiend' %}
+{% assign: Grid_Item_6_Title = "Vogue" %}
+{% capture Grid_Item_6_Text %}<gi-6_text>
+<!--Enter Grid Item 6 Text Below-->
+March 2014 Issue | http://www.vogue.com/magazine/
+<!-- End --></gi-6_text>{% endcapture %}
+
+{{ --GRID ITEM 7 SETTINGS-- }}
+
+{% assign: Grid_Item_7_Image_Url = 'http://themefienddemos.com/add-ons/content-grid/_images/shop7.jpg' %}
+{% assign: Grid_Item_7_Page_Url = 'http://themefiend.com' %}
+{% assign: Grid_Item_7_Title = "UBIQ" %}
+{% capture Grid_Item_7_Text %}<gi-7_text>
+<!--Enter Grid Item 7 Text Below-->
+266 Merrick Road 
+Rockville Centre, NY 11570 
+P.516.632.5150 
+www.extrabutterny.com
+<!-- End --></gi-7_text>{% endcapture %}
+
+{{ --GRID ITEM 8 SETTINGS-- }}
+
+{% assign: Grid_Item_8_Image_Url = 'http://themefienddemos.com/add-ons/content-grid/_images/shop8.jpg' %}
+{% assign: Grid_Item_8_Page_Url = 'http://support.themefiend.com' %}
+{% assign: Grid_Item_8_Title = "Livestock" %}
+{% capture Grid_Item_8_Text %}<gi-8_text>
+<!--Enter Grid Item 8 Text Below-->
+147 West 72nd st. 
+New York, NY 10023 
+P.212.787.8595 
+www.westnyc.com
+<!-- End --></gi-8_text>{% endcapture %}
+
+{{ --GRID ITEM 9 SETTINGS-- }}
+
+{% assign: Grid_Item_9_Image_Url = 'http://themefienddemos.com/add-ons/content-grid/_images/shop9.jpg' %}
+{% assign: Grid_Item_9_Page_Url = 'http://twitter.com/themefiend' %}
+{% assign: Grid_Item_9_Title = "Sneaker Bistro" %}
+{% capture Grid_Item_9_Text %}<gi-9_text>
+<!--Enter Grid Item 9 Text Below-->
+29-20B 23RD AVENUE 
+ASTORIA, NY 11105 
+P.718.721.4444 
+www.beliefnyc.com
+<!-- End --></gi-9_text>{% endcapture %}
+
+{{ --GRID ITEM 10 SETTINGS-- }}
+
+{% assign: Grid_Item_10_Image_Url = 'http://themefienddemos.com/add-ons/content-grid/_images/shop10.jpg' %}
+{% assign: Grid_Item_10_Page_Url = 'http://themefiend.com' %}
+{% assign: Grid_Item_10_Title = "Blades" %}
+{% capture Grid_Item_10_Text %}<gi-10_text>
+<!--Enter Grid Item 10 Text Below-->
+147 West 72nd st. 
+New York, NY 10023 
+P.212.787.8595 
+www.westnyc.com
+<!-- End --></gi-10_text>{% endcapture %}
+
+{{ --GRID ITEM 11 SETTINGS-- }}
+
+{% assign: Grid_Item_11_Image_Url = 'http://themefienddemos.com/add-ons/content-grid/_images/shop11.jpg' %}
+{% assign: Grid_Item_11_Page_Url = 'http://support.themefiend.com' %}
+{% assign: Grid_Item_11_Title = "Memes" %}
+{% capture Grid_Item_11_Text %}<gi-11_text>
+<!--Enter Grid Item 11 Text Below-->
+29-20B 23RD AVENUE 
+ASTORIA, NY 11105 
+P.718.721.4444 
+www.beliefnyc.com
+<!-- End --></gi-11_text>{% endcapture %}
+
+{{ --GRID ITEM 12 SETTINGS-- }}
+
+{% assign: Grid_Item_12_Image_Url = 'http://themefienddemos.com/add-ons/content-grid/_images/shop12.jpg' %}
+{% assign: Grid_Item_12_Page_Url = 'http://twitter.com/themefiend' %}
+{% assign: Grid_Item_12_Title = "YRB" %}
+{% capture Grid_Item_12_Text %}<gi-12_text>
+<!--Enter Grid Item 12 Text Below-->
+147 West 72nd st. 
+New York, NY 10023 
+P.212.787.8595 
+www.westnyc.com
+<!-- End --></gi-12_text>{% endcapture %}
+
+{{ ----END INDIVIDUAL GRID ITEM SETTINGS---- }}
+
+
+{{ ---------END THEME SETTINGS AND CONTROLS----------- }}
+
+
+
+
+{{ ---------BEGIN GRID ADD-ON HTML TEMPLATE CODE---------- }}
+
+<!-- Do NOT Modify -->
+{% assign: nogi = Number_of_Grid_Items %}
+{% assign: gipr = Grid_Items_Per_Row %}
+{% assign: gimg = Grid_Items_Margin %}
+{% assign: gdtx = "class='gi_text'" %}
+
+{% assign: girc = Grid_Image_Rounded_Corners %}
+{% assign: gil = Grid_Image_Links %}
+{% assign: gilt = Grid_Image_Link_Type %}
+{% assign: gilb = Grid_Image_Link_Behavior %} 
+{% assign: gilpn = Grid_Image_Link_Popup_Navigation %}
+
+{% assign: sgit = Show_Grid_Item_Text %}
+{% assign: gitxam = Grid_Item_Text_Arrangement %}
+{% assign: gital = Grid_Item_Text_Alignment %}
+{% assign: sgittx = Show_Grid_Item_Title_Text %}
+{% assign: sgidtx = Show_Grid_Item_Description_Text %}
+
+{% capture it_pr %}{% if gimg == 0 %}mg-O{% endif %}{% if gimg == 0.5 %}mg-OpV{% endif %}{% if gimg == 1 %}mg-I{% endif %}{% if gimg == 1.5 %}mg-IpV{% endif %}{% if gimg == 2 %}mg-II{% endif %}{% if gimg == 2.5 %}mg-IIpV{% endif %}{% if gimg == 3 %}mg-III{% endif %}{% endcapture %}
+{% capture it_mrgn %}{% if gipr == 2 %}ii_ipr{% endif %}{% if gipr == 3 %}iii_ipr{% endif %}{% if gipr == 4 %}iv_ipr{% endif %}{% if gipr == 5 %}v_ipr{% endif %}{% endcapture %}
+<!-- -->
+
+<div id="grid-addon">
+
+{% if Show_Custom_Page_Title contains 'es' %}
+<h1 class="page-title">{{ Custom_Page_Title }}</h1>
+{% else %}
+<h1 class="page-title">{{ page.name | remove: '-pg-1-' | remove: '-pg-2-' | remove: '-pg-3-' | remove: '-pg-4-' | remove: '-footer-' | remove: '-hide-' | remove: '-sidebar-' | remove: '-subnav-' | remove: '-f1-' | remove: '-f2-' | remove: '-f3-' }}</h1>
+{% endif %}
+
+{% if Show_Grid_Intro_Text contains 'es' %}<div id="grid-intro-text">{{ Grid_Intro_Text | paragraphs }}</div>{% endif %}
+<div id="grid-container" class="{{ it_pr }} {{ it_mrgn }}">
+{% capture gi_title %}{% if sgittx contains 'es' %}<h3>{{ Grid_Item_1_Title }}</h3>{% endif %}{% endcapture %}
+{% capture gitx_box %}{% if sgit contains 'es' %}<div {{ gdtx }}>{% unless gitxam contains 'itle' %}{{ gi_title }}{% endunless %}{% if sgidtx contains 'es' %}<p>{{ Grid_Item_1_Text }}</p>{% endif %}</div>{% endif %}{% endcapture %}
+{% if gilb contains 'ew' %}{% capture pg_target %}target="new"{% endcapture %}{% endif %}
+  {% capture gi_img %}<li {% if gilb contains 'op' %}class="gi-popup"{% endif %}>{% if gil contains 'es' %}<a title="{{ Grid_Item_1_Title }}" {% if gilpn contains 'es' %}rel="grid-navigation"{% endif %}{% if gilb contains 'indo' %}{{ pg_target }}{% endif %} href="{% if gilt contains 'mage' %}{{ Grid_Item_1_Image_Url }}{% elsif gilt contains 'age' %}{{ Grid_Item_1_Page_Url }}{% endif %}">{% endif %}<img src="{{ Grid_Item_1_Image_Url }}">{% if gil contains 'es' %}</a>{% endif %}</li>{% endcapture %}
+{% if Image_Source contains 'elf' %}    
+{% capture GIC %}{% if gitxam contains 'itle' %}{{ gi_title }}{{ gi_img }}{{ gitx_box }}{% endif %}{% if gitxam contains 'elow' %}{{ gi_img }}{{ gitx_box }}{% elsif gitxam contains 'bove' %}{{ gitx_box }}{{ gi_img }}{% endif %}{% endcapture %}
+{% if nogi >= 1 %}<div id="gi-1" class="grid_item">{{ GIC | newline_to_br }}</div>{% endif %}
+{% if nogi >= 2 %}<div id="gi-2" class="grid_item {% if gipr == 2 %}last{% endif %}">{{ GIC | replace: Grid_Item_1_Image_Url , Grid_Item_2_Image_Url | replace: Grid_Item_1_Page_Url , Grid_Item_2_Page_Url |  replace: Grid_Item_1_Title , Grid_Item_2_Title | replace: Grid_Item_1_Text , Grid_Item_2_Text | newline_to_br }}</div>{% endif %}
+{% if nogi >= 3 %}<div id="gi-3" class="grid_item {% if gipr == 3 %}last{% endif %}">{{ GIC | replace: Grid_Item_1_Image_Url , Grid_Item_3_Image_Url | replace: Grid_Item_1_Page_Url , Grid_Item_3_Page_Url |  replace: Grid_Item_1_Title , Grid_Item_3_Title | replace: Grid_Item_1_Text , Grid_Item_3_Text | newline_to_br }}</div>{% endif %}
+{% if nogi >= 4 %}<div id="gi-4" class="grid_item {% if gipr == 2  or gipr == 4 %}last{% endif %}">{{ GIC | replace: Grid_Item_1_Image_Url , Grid_Item_4_Image_Url | replace: Grid_Item_1_Page_Url , Grid_Item_4_Page_Url |  replace: Grid_Item_1_Title , Grid_Item_4_Title | replace: Grid_Item_1_Text , Grid_Item_4_Text | newline_to_br }}</div>{% endif %}
+{% if nogi >= 5 %}<div id="gi-5" class="grid_item {% if gipr == 5 %}last{% endif %}">{{ GIC | replace: Grid_Item_1_Image_Url , Grid_Item_5_Image_Url | replace: Grid_Item_1_Page_Url , Grid_Item_5_Page_Url |  replace: Grid_Item_1_Title , Grid_Item_5_Title | replace: Grid_Item_1_Text , Grid_Item_5_Text | newline_to_br }}</div>{% endif %}
+{% if nogi >= 6 %}<div id="gi-6" class="grid_item {% if gipr == 2 or gipr == 3 %}last{% endif %}">{{ GIC | replace: Grid_Item_1_Image_Url , Grid_Item_6_Image_Url | replace: Grid_Item_1_Page_Url , Grid_Item_6_Page_Url |  replace: Grid_Item_1_Title , Grid_Item_6_Title | replace: Grid_Item_1_Text , Grid_Item_6_Text | newline_to_br }}</div>{% endif %}
+{% if nogi >= 7 %}<div id="gi-7" class="grid_item">{{ GIC | replace: Grid_Item_1_Image_Url , Grid_Item_7_Image_Url | replace: Grid_Item_1_Page_Url , Grid_Item_7_Page_Url |  replace: Grid_Item_1_Title , Grid_Item_7_Title | replace: Grid_Item_1_Text , Grid_Item_7_Text | newline_to_br }}</div>{% endif %}
+{% if nogi >= 8 %}<div id="gi-8" class="grid_item {% if gipr == 2 or gipr == 4 %}last{% endif %}">{{ GIC | replace: Grid_Item_1_Image_Url , Grid_Item_8_Image_Url | replace: Grid_Item_1_Page_Url , Grid_Item_8_Page_Url |  replace: Grid_Item_1_Title , Grid_Item_8_Title | replace: Grid_Item_1_Text , Grid_Item_8_Text | newline_to_br }}</div>{% endif %}
+{% if nogi >= 9 %}<div id="gi-9" class="grid_item {% if gipr == 3 %}last{% endif %}">{{ GIC | replace: Grid_Item_1_Image_Url , Grid_Item_9_Image_Url | replace: Grid_Item_1_Page_Url , Grid_Item_9_Page_Url |  replace: Grid_Item_1_Title , Grid_Item_9_Title | replace: Grid_Item_1_Text , Grid_Item_9_Text | newline_to_br }}</div>{% endif %}
+{% if nogi >= 10 %}<div id="gi-10" class="grid_item {% if gipr == 2 or gipr == 5%}last{% endif %}">{{ GIC | replace: Grid_Item_1_Image_Url , Grid_Item_10_Image_Url | replace: Grid_Item_1_Page_Url , Grid_Item_10_Page_Url |  replace: Grid_Item_1_Title , Grid_Item_10_Title | replace: Grid_Item_1_Text , Grid_Item_10_Text | newline_to_br }}</div>{% endif %}
+{% if nogi >= 11 %}<div id="gi-11" class="grid_item">{{ GIC | replace: Grid_Item_1_Image_Url , Grid_Item_11_Image_Url | replace: Grid_Item_1_Page_Url , Grid_Item_11_Page_Url |  replace: Grid_Item_1_Title , Grid_Item_11_Title | replace: Grid_Item_1_Text , Grid_Item_11_Text | newline_to_br }}</div>{% endif %}
+{% if nogi >= 12 %}<div id="gi-12" class="grid_item {% if gipr == 2 or gipr == 3 or gipr == 4 %}last{% endif %}">{{ GIC | replace: Grid_Item_1_Image_Url , Grid_Item_12_Image_Url | replace: Grid_Item_1_Page_Url , Grid_Item_12_Page_Url |  replace: Grid_Item_1_Title , Grid_Item_12_Title | replace: Grid_Item_1_Text , Grid_Item_12_Text | newline_to_br }}</div>{% endif %}
+{% endif %}
+{% if Image_Source contains 'ab' %}  
+{% assign: Lab = 'http://themefiend.com/lab/images/' %}
+{% assign: gi_id = 'gi-01.jpg' %}{% capture gi_lab_img %}{{ Lab }}{{ Theme_Fiend_Lab_UserName }}{{ page.url | remove: 'footer-'  | remove: 'sidebar-'  | remove: store.url }}-{{ gi_id }}{% endcapture %}  
+{% capture l_gi_img %}<li {% if gilb contains 'op' %}class="gi-popup"{% endif %}>{% if gil contains 'es' %}<a title="{{ Grid_Item_1_Title }}" {% if gilpn contains 'es' %}rel="grid-navigation"{% endif %}{% if gilb contains 'indo' %}{{ pg_target }}{% endif %} href="{% if gilt contains 'mage' %}{{ gi_lab_img }}{% elsif gilt contains 'age' %}{{ Grid_Item_1_Page_Url }}{% endif %}">{% endif %}<img src="{{ gi_lab_img }}">{% if gil contains 'es' %}</a>{% endif %}</li>{% endcapture %}
+{% capture L_GIC %}{% if gitxam contains 'itle' %}{{ gi_title }}{{ l_gi_img }}{{ gitx_box }}{% endif %}{% if gitxam contains 'elow' %}{{ l_gi_img }}{{ gitx_box }}{% elsif gitxam contains 'bove' %}{{ gitx_box }}{{ l_gi_img }}{% endif %}{% endcapture %}
+{% if nogi >= 1 %}<div id="gi-1" class="grid_item">{{ L_GIC | newline_to_br }}</div>{% endif %}
+{% if nogi >= 2 %}<div id="gi-2" class="grid_item {% if gipr == 2 %}last{% endif %}">{{ L_GIC | replace: "-01", "-02" | replace: Grid_Item_1_Page_Url , Grid_Item_2_Page_Url |  replace: Grid_Item_1_Title , Grid_Item_2_Title | replace: Grid_Item_1_Text , Grid_Item_2_Text | newline_to_br }}</div>{% endif %}
+{% if nogi >= 3 %}<div id="gi-3" class="grid_item {% if gipr == 3 %}last{% endif %}">{{ L_GIC | replace: "-01", "-03" | replace: Grid_Item_1_Page_Url , Grid_Item_3_Page_Url |  replace: Grid_Item_1_Title , Grid_Item_3_Title | replace: Grid_Item_1_Text , Grid_Item_3_Text | newline_to_br }}</div>{% endif %}
+{% if nogi >= 4 %}<div id="gi-4" class="grid_item {% if gipr == 2  or gipr == 4 %}last{% endif %}">{{ L_GIC | replace: "-01", "-04" | replace: Grid_Item_1_Page_Url , Grid_Item_4_Page_Url |  replace: Grid_Item_1_Title , Grid_Item_4_Title | replace: Grid_Item_1_Text , Grid_Item_4_Text | newline_to_br }}</div>{% endif %}
+{% if nogi >= 5 %}<div id="gi-5" class="grid_item {% if gipr == 5 %}last{% endif %}">{{ L_GIC | replace: "-01", "-05" | replace: Grid_Item_1_Page_Url , Grid_Item_5_Page_Url |  replace: Grid_Item_1_Title , Grid_Item_5_Title | replace: Grid_Item_1_Text , Grid_Item_5_Text | newline_to_br }}</div>{% endif %}
+{% if nogi >= 6 %}<div id="gi-6" class="grid_item {% if gipr == 2 or gipr == 3 %}last{% endif %}">{{ L_GIC | replace: "-01", "-06" | replace: Grid_Item_1_Page_Url , Grid_Item_6_Page_Url |  replace: Grid_Item_1_Title , Grid_Item_6_Title | replace: Grid_Item_1_Text , Grid_Item_6_Text | newline_to_br }}</div>{% endif %}
+{% if nogi >= 7 %}<div id="gi-7" class="grid_item">{{ L_GIC | replace: "-01", "-07" | replace: Grid_Item_1_Page_Url , Grid_Item_7_Page_Url |  replace: Grid_Item_1_Title , Grid_Item_7_Title | replace: Grid_Item_1_Text , Grid_Item_7_Text | newline_to_br }}</div>{% endif %}
+{% if nogi >= 8 %}<div id="gi-8" class="grid_item {% if gipr == 2 or gipr == 4 %}last{% endif %}">{{ L_GIC | replace: "-01", "-08" | replace: Grid_Item_1_Page_Url , Grid_Item_8_Page_Url |  replace: Grid_Item_1_Title , Grid_Item_8_Title | replace: Grid_Item_1_Text , Grid_Item_8_Text | newline_to_br }}</div>{% endif %}
+{% if nogi >= 9 %}<div id="gi-9" class="grid_item {% if gipr == 3 %}last{% endif %}">{{ L_GIC | replace: "-01", "-09" | replace: Grid_Item_1_Page_Url , Grid_Item_9_Page_Url |  replace: Grid_Item_1_Title , Grid_Item_9_Title | replace: Grid_Item_1_Text , Grid_Item_9_Text | newline_to_br }}</div>{% endif %}
+{% if nogi >= 10 %}<div id="gi-10" class="grid_item {% if gipr == 2 or gipr == 5%}last{% endif %}">{{ L_GIC | replace: "-01", "-10" | replace: Grid_Item_1_Page_Url , Grid_Item_10_Page_Url |  replace: Grid_Item_1_Title , Grid_Item_10_Title | replace: Grid_Item_1_Text , Grid_Item_10_Text | newline_to_br }}</div>{% endif %}
+{% if nogi >= 11 %}<div id="gi-11" class="grid_item">{{ L_GIC | replace: "-01", "-11" | replace: Grid_Item_1_Page_Url , Grid_Item_11_Page_Url |  replace: Grid_Item_1_Title , Grid_Item_11_Title | replace: Grid_Item_1_Text , Grid_Item_11_Text | newline_to_br }}</div>{% endif %}
+{% if nogi >= 12 %}<div id="gi-12" class="grid_item {% if gipr == 2 or gipr == 3 or gipr == 4 %}last{% endif %}">{{ L_GIC | replace: "-01", "-12" | replace: Grid_Item_1_Page_Url , Grid_Item_12_Page_Url |  replace: Grid_Item_1_Title , Grid_Item_12_Title | replace: Grid_Item_1_Text , Grid_Item_12_Text | newline_to_br }}</div>{% endif %}
+{% endif %}
+</div>
+
+</div>
+
+{{ ---------END GRID ADD-ON HTML TEMPLATE CODE---------- }}
+
+
+{{ ---------BEGIN GRID ADD-ON CSS/JAVASCRIPT CODE---------- }}
+
+<style type="text/css">
+.media {overflow:visible}
+/* Inverse for Flatbush theme */.page-title {display:inline-block}#grid-addon .page-title {display:none}
+#grid-addon {position:relative}#grid-container {font-size: 0px;}
+#grid-intro-text {margin-bottom: 1.5%;margin-top: 0.5%}
+.grid_item h3 {font-size: {{ Titles_Font_Size }}px !important; line-height: 125%; margin-top: 10px !important;{% if gitxam contains 'itle' %}margin-bottom:10px !important;{% else %}margin-bottom:0px !important;{% endif %} text-align:{{ gital | downcase }};}
+.grid_item p {text-align:{{ gital | downcase }};margin-top:10px !important;}
+.grid_item {vertical-align: top;display: inline-block;height: auto;box-sizing:border-box;-moz-box-sizing:border-box;padding:0%;border:0px solid transparent;position:relative}
+.grid_item img {width: 100%;{% if girc contains 'es' %}border-radius:5px{% endif %}box-sizing:border-box;-moz-box-sizing:border-box;}
+.gi_text {display: inline-block;width: 100%;box-sizing:border-box;-moz-box-sizing:border-box;padding:0%;background-color:transparent;}
+#colorbox, #cboxOverlay, #cboxWrapper {z-index: 2147483647 !important;}
+body #cboxContent #cboxPrevious, body #cboxContent #cboxNext {background-image: url(http://themefiend.com/tf-themes/_images/arrows/8.png) !important;opacity: 0.6;filter:alpha(opacity=60);width: 24px !important;height: 50px !important;outline: none;top: 45%;}
+body #cboxContent button:hover {opacity: 0.9 !important;filter:alpha(opacity=90) !important;}
+body button#cboxPrevious {background-position: 0px 0px !important;right: inherit;left: 15px;}
+body button#cboxNext {background-position: 100% 0px !important;right: 15px;left:inherit;}
+body #cboxClose {right: 2px;top: 2px;}
+body #cboxTitle {color: #ffffff;display: none !important}
+/*----------ITEMS PER ROW AND MARGINS CSS-----------------*/
+/* ---TWO Items Per Row; 0% to 3% Margin--- */
+.ii_ipr.mg-O .grid_item {margin:0% 0% 0% 0%;width:50%}
+.ii_ipr.mg-OpV .grid_item {margin:0% 0.5% 0.5% 0%;width:49.75%}
+.ii_ipr.mg-I .grid_item {margin:0% 1% 5% 0%;width:49.5%}
+.ii_ipr.mg-IpV .grid_item {margin:0% 1.5% 1.5% 0%;width:49.25%}
+.ii_ipr.mg-II .grid_item {margin:0% 2% 2% 0%;width:49%}
+.ii_ipr.mg-IIpV .grid_item {margin:0% 2.5% 2.5% 0%;width:48.75%}
+.ii_ipr.mg-III .grid_item {margin:0% 3% 3% 0%;width:48.5%}
+/* ---THREE Items Per Row; 0% to 3% Margin--- */
+.iii_ipr.mg-O .grid_item {margin:0% 0% 0% 0%;width:33.3333%}
+.iii_ipr.mg-OpV .grid_item {margin:0% 0.5% 0.5% 0%;width:33%}
+.iii_ipr.mg-I .grid_item {margin:0% 1% 1% 0%;width:32.6667%}
+.iii_ipr.mg-IpV .grid_item {margin:0% 1.5% 1.5% 0%;width:32.3333%}
+.iii_ipr.mg-II .grid_item {margin:0% 2% 2% 0%;width:32%}
+.iii_ipr.mg-IIpV .grid_item {margin:0% 2.5% 2.5% 0%;width:31.6667%}
+.iii_ipr.mg-III .grid_item {margin:0% 3% 3% 0%;width:31.3333%}
+/* ---FOUR Items Per Row; 0% to 3% Margin--- */
+.iv_ipr.mg-O .grid_item {margin:0% 0% 0% 0%;width:25%}
+.iv_ipr.mg-OpV .grid_item {margin:0% 0.5% 0.5% 0%;width:24.625%}
+.iv_ipr.mg-I .grid_item {margin:0% 1% 1% 0%;width:24.250%}
+.iv_ipr.mg-IpV .grid_item {margin:0% 1.5% 1.5% 0%;width:23.875%}
+.iv_ipr.mg-II .grid_item {margin:0% 2% 2% 0%;width:23.5%}
+.iv_ipr.mg-IIpV .grid_item {margin:0% 2.5% 2.5% 0%;width:23.125%}
+.iv_ipr.mg-III .grid_item {margin:0% 3% 3% 0%;width:22.75%}
+/* ---FIVE Items Per Row; 0% to 3% Margin--- */
+.v_ipr.mg-O .grid_item {margin:0% 0% 0% 0%;width:20%}
+.v_ipr.mg-OpV .grid_item {margin:0% 0.5% 0.5% 0%;width:19.6%}
+.v_ipr.mg-I .grid_item {margin:0% 1% 1% 0%;width: 19.2%}
+.v_ipr.mg-IpV .grid_item {margin:0% 1.5% 1.5% 0%;width:18.8%}
+.v_ipr.mg-II .grid_item {margin:0% 2% 2% 0%;width:18.4%}
+.v_ipr.mg-IIpV .grid_item {margin:0% 2.5% 2.5% 0%;width:18%}
+.iv_ipr.mg-III .grid_item {margin:0% 3% 3% 0%;width:17.6%}
+/* ---Last Item In Row (No Margin)--- */
+@media only screen and  (min-width: 768px) {
+.ii_ipr .grid_item.last, .iii_ipr .grid_item.last, .iv_ipr .grid_item.last, .v_ipr .grid_item.last {margin-right: 0%}
+}
+/*============= Media Screen 767px========================*/
+@media only screen and  (max-width: 767px) {
+.mg-O .grid_item {margin:0% 0% 0% 0%;width:50% !important}
+.mg-OpV .grid_item {margin:0% 0.5% 0.5% 0%;width:49.75% !important}
+.mg-I .grid_item {margin:0% 1% 5% 0%;width:49.5% !important}
+.mg-IpV .grid_item {margin:0% 1.5% 1.5% 0%;width:49.25% !important}
+.mg-II .grid_item {margin:0% 2% 2% 0%;width:49% !important}
+.mg-IIpV .grid_item {margin:0% 2.5% 2.5% 0%;width:48.75% !important}
+.mg-III .grid_item {margin:0% 3% 3% 0%;width:48.5% !important}
+.grid_item:nth-child(2n) {margin-right: 0% !important}
+}
+</style>
+
+<link rel="stylesheet" type="text/css" href="https://s3.amazonaws.com/themefiend/theme_plugins/colorbox/colorbox.css">
+<script type="text/javascript" src="https://s3.amazonaws.com/themefiend/theme_plugins/colorbox/jquery.colorbox-min.js"></script>
+<script type="text/javascript" charset="utf-8">   
+(function($) {
+$(document).ready(function(){ 
+  $(".gi-popup a").colorbox({maxWidth:'800'});
+  $("#grid-addon > br, #grid-container > br, .grid_item > br, #grid-addon p:empty").remove();
+  $(".gi_text br:first-child, .gi_text br:first-child + br, #grid-intro-text br:first-child, #grid-intro-text br:first-child + br").remove();
+});
+var url1 = /(^|&lt;|\s)(www\..+?\..+?)(\s|&gt;|$)/g,
+      url2 = /(^|&lt;|\s)(((https?|ftp):\/\/|mailto:).+?)(\s|&gt;|$)/g,
+      linkifyThis = function () {
+        var childNodes = this.childNodes,
+            i = childNodes.length;
+        while(i--)
+        {
+          var n = childNodes[i];
+          if (n.nodeType == 3) {
+            var html = $.trim(n.nodeValue);
+            if (html)
+            {
+              html = html.replace(/&/g, '&amp;')
+                         .replace(/</g, '&lt;')
+                         .replace(/>/g, '&gt;')
+                         .replace(url1, '$1<a href="http://$2">$2</a>$3')
+                         .replace(url2, '$1<a href="$2">$2</a>$5');
+              $(n).after(html).remove();
+            }
+          }
+          else if (n.nodeType == 1  &&  !/^(a|button|textarea)$/i.test(n.tagName)) {
+            linkifyThis.call(n);
+          }
+        }
+      };
+  $.fn.linkify = function () {
+    return this.each(linkifyThis);
+  };
+  $('body').linkify();
+  $("a[@href^='www'], a[@href^='http']").attr('target','_blank');
+})(jQuery);
+</script>
+
+{{ ---------END GRID ADD-ON CSS/JAVASCRIPT CODE---------- }}
+

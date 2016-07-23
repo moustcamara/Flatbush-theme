@@ -1,0 +1,217 @@
+{{ ---------BEGIN THEME SETTINGS AND CONTROLS----------- }}
+
+{% assign: Theme_Fiend_Lab_UserName = 'YourUserName' %}
+{% assign: Image_Source = 'Self-hosted' %} {{ Options: 'Lab' or 'Self-hosted' }}
+
+{{ ----GALLERY SETTINGS---- }}
+
+{% assign: Slides = 6 %} {{ Options: 1 to 30 (Number of slides in your slideshow) }}
+
+{% assign: Slider_Speed = 4 %} 
+{{ Note: Enter the number (in seconds) of the speed that you want the slider to progress at. DO NOT include quotation ('') marks }}
+
+{% assign: Slider_Animation_Effect = 'slide' %} {{ Options: 'fade' or 'slide' }}
+
+{{ Note: Choosing 'Lab' as your Image_Source means that your slideshow will use the images you uploaded to your Theme Fiend Lab account  }}
+
+{{ Note:  Only set Slide_Image_Url if you chose 'Self-hosted' Option }}
+
+{{ Images uploaded to Theme Fiend Lab account will appear automatically if named according to the renaming guidelines (page url slug and slide order)  (so you won€™t have to include your image urls below) }}
+
+{{ (ex. lookbook-slide-01.jpg, lookbook-slide-02.jpg; fall-2012-lookbook-slide-01.jpg, fall-2012-lookbook-slide-02.jpg }}
+
+
+
+{% assign: Slide_Image_Url_1 = 'http://themefienddemos.com/flatbush/_images/flatbush-slide-1.png' %}
+
+{% assign: Slide_Image_Url_2 = 'http://themefienddemos.com/flatbush/_images/flatbush-slide-2.png' %}
+
+{% assign: Slide_Image_Url_3 = 'http://themefienddemos.com/flatbush/_images/flatbush-slide-3.png' %}
+
+{% assign: Slide_Image_Url_4 = 'http://themefienddemos.com/flatbush/_images/flatbush-slide-1.png' %}
+
+{% assign: Slide_Image_Url_5 = 'http://themefienddemos.com/flatbush/_images/flatbush-slide-2.png' %}
+
+{% assign: Slide_Image_Url_6 = 'http://themefienddemos.com/flatbush/_images/flatbush-slide-3.png' %}
+
+{% assign: Slide_Image_Url_7 = 'http://example.com/image.jpg' %}
+
+{% assign: Slide_Image_Url_8 = 'http://example.com/image.jpg' %}
+
+{% assign: Slide_Image_Url_9 = 'http://example.com/image.jpg' %}
+
+{% assign: Slide_Image_Url_10 = 'http://example.com/image.jpg' %}
+
+
+{% assign: Slide_Image_Url_11 = 'http://example.com/image.jpg' %}
+
+{% assign: Slide_Image_Url_12 = 'http://example.com/image.jpg' %}
+
+{% assign: Slide_Image_Url_13 = 'http://example.com/image.jpg' %}
+
+{% assign: Slide_Image_Url_14 = 'http://example.com/image.jpg' %}
+
+{% assign: Slide_Image_Url_15 = 'http://example.com/image.jpg' %}
+
+{% assign: Slide_Image_Url_16 = 'http://example.com/image.jpg' %}
+
+{% assign: Slide_Image_Url_17 = 'http://example.com/image.jpg' %}
+
+{% assign: Slide_Image_Url_18 = 'http://example.com/image.jpg' %}
+
+{% assign: Slide_Image_Url_19 = 'http://example.com/image.jpg' %}
+
+{% assign: Slide_Image_Url_20 = 'http://example.com/image.jpg' %}
+
+
+{% assign: Slide_Image_Url_21 = 'http://example.com/image.jpg' %}
+
+{% assign: Slide_Image_Url_22 = 'http://example.com/image.jpg' %}
+
+{% assign: Slide_Image_Url_23 = 'http://example.com/image.jpg' %}
+
+{% assign: Slide_Image_Url_24 = 'http://example.com/image.jpg' %}
+
+{% assign: Slide_Image_Url_25 = 'http://example.com/image.jpg' %}
+
+{% assign: Slide_Image_Url_26 = 'http://example.com/image.jpg' %}
+
+{% assign: Slide_Image_Url_27 = 'http://example.com/image.jpg' %}
+
+{% assign: Slide_Image_Url_28 = 'http://example.com/image.jpg' %}
+
+{% assign: Slide_Image_Url_29 = 'http://example.com/image.jpg' %}
+
+{% assign: Slide_Image_Url_30 = 'http://example.com/image.jpg' %}
+
+{{ ---------END THEME SETTINGS AND CONTROLS----------- }}
+
+{% assign: Lab = 'http://themefiend.com/lab/images/' %}
+
+
+{% capture reset %}style="margin:0px; padding:0px; text-align:{{ Slideshow_Alignment }};"{% endcapture %}
+
+{% capture Slideshow_Custom_Size %}style="width:{{ Slideshow_Width }}px !important; height:{{ Slideshow_Height }}px !important;"{% endcapture %}
+
+{% assign No_Img = 'http://themefiend.com/images/no.png' %}
+
+
+<div id="wide-slider">
+ {% capture gallery_slider %} 
+<div id="gallery-slider" class="flexslider">
+  <ul class="slides">
+ {% if Image_Source == 'Self-hosted' or Image_Source != 'Lab' %}    
+ {% if Slides >= 1 %}<li data-thumb="{{ Slide_Image_Url_1 }}"><img src="{{ Slide_Image_Url_1 }}" ></li>{% endif %}
+ {% if Slides >= 2 %}<li data-thumb="{{ Slide_Image_Url_2 }}"><img src="{{ Slide_Image_Url_2 }}" ></li>{% endif %}
+ {% if Slides >= 3 %}<li data-thumb="{{ Slide_Image_Url_3 }}"><img src="{{ Slide_Image_Url_3 }}" ></li>{% endif %}
+ {% if Slides >= 4 %}<li data-thumb="{{ Slide_Image_Url_4 }}"><img src="{{ Slide_Image_Url_4 }}" ></li>{% endif %}
+ {% if Slides >= 5 %}<li data-thumb="{{ Slide_Image_Url_5 }}"><img src="{{ Slide_Image_Url_5 }}" ></li>{% endif %}
+ {% if Slides >= 6 %}<li data-thumb="{{ Slide_Image_Url_6 }}"><img src="{{ Slide_Image_Url_6 }}" ></li>{% endif %}
+ {% if Slides >= 7 %}<li data-thumb="{{ Slide_Image_Url_7 }}"><img src="{{ Slide_Image_Url_7 }}" ></li>{% endif %}
+ {% if Slides >= 8 %}<li data-thumb="{{ Slide_Image_Url_8 }}"><img src="{{ Slide_Image_Url_8 }}" ></li>{% endif %}
+ {% if Slides >= 9 %}<li data-thumb="{{ Slide_Image_Url_9 }}"><img src="{{ Slide_Image_Url_9 }}" ></li>{% endif %}
+ {% if Slides >= 10 %}<li data-thumb="{{ Slide_Image_Url_10 }}"><img src="{{ Slide_Image_Url_10 }}" ></li>{% endif %}
+    
+ {% if Slides >= 11 %}<li data-thumb="{{ Slide_Image_Url_11 }}"><img src="{{ Slide_Image_Url_11 }}" ></li>{% endif %}
+ {% if Slides >= 12 %}<li data-thumb="{{ Slide_Image_Url_12 }}"><img src="{{ Slide_Image_Url_12 }}" ></li>{% endif %}
+ {% if Slides >= 13 %}<li data-thumb="{{ Slide_Image_Url_13 }}"><img src="{{ Slide_Image_Url_13 }}" ></li>{% endif %}
+ {% if Slides >= 14 %}<li data-thumb="{{ Slide_Image_Url_14 }}"><img src="{{ Slide_Image_Url_14 }}" ></li>{% endif %}
+ {% if Slides >= 15 %}<li data-thumb="{{ Slide_Image_Url_15 }}"><img src="{{ Slide_Image_Url_15 }}" ></li>{% endif %}
+ {% if Slides >= 16 %}<li data-thumb="{{ Slide_Image_Url_16 }}"><img src="{{ Slide_Image_Url_16 }}" ></li>{% endif %}
+ {% if Slides >= 17 %}<li data-thumb="{{ Slide_Image_Url_17 }}"><img src="{{ Slide_Image_Url_17 }}" ></li>{% endif %}
+ {% if Slides >= 18 %}<li data-thumb="{{ Slide_Image_Url_18 }}"><img src="{{ Slide_Image_Url_18 }}" ></li>{% endif %}
+ {% if Slides >= 19 %}<li data-thumb="{{ Slide_Image_Url_19 }}"><img src="{{ Slide_Image_Url_19 }}" ></li>{% endif %}
+ {% if Slides >= 20 %}<li data-thumb="{{ Slide_Image_Url_20 }}"><img src="{{ Slide_Image_Url_20 }}" ></li>{% endif %}
+    
+ {% if Slides >= 21 %}<li data-thumb="{{ Slide_Image_Url_21 }}"><img src="{{ Slide_Image_Url_21 }}" ></li>{% endif %}
+ {% if Slides >= 22 %}<li data-thumb="{{ Slide_Image_Url_22 }}"><img src="{{ Slide_Image_Url_22 }}" ></li>{% endif %}
+ {% if Slides >= 23 %}<li data-thumb="{{ Slide_Image_Url_23 }}"><img src="{{ Slide_Image_Url_23 }}" ></li>{% endif %}
+ {% if Slides >= 24 %}<li data-thumb="{{ Slide_Image_Url_24 }}"><img src="{{ Slide_Image_Url_24 }}" ></li>{% endif %}
+ {% if Slides >= 25 %}<li data-thumb="{{ Slide_Image_Url_25 }}"><img src="{{ Slide_Image_Url_25 }}" ></li>{% endif %}
+ {% if Slides >= 26 %}<li data-thumb="{{ Slide_Image_Url_26 }}"><img src="{{ Slide_Image_Url_26 }}" ></li>{% endif %}
+ {% if Slides >= 27 %}<li data-thumb="{{ Slide_Image_Url_27 }}"><img src="{{ Slide_Image_Url_27 }}" ></li>{% endif %}
+ {% if Slides >= 28 %}<li data-thumb="{{ Slide_Image_Url_28 }}"><img src="{{ Slide_Image_Url_28 }}" ></li>{% endif %}
+ {% if Slides >= 29 %}<li data-thumb="{{ Slide_Image_Url_29 }}"><img src="{{ Slide_Image_Url_29 }}" ></li>{% endif %}
+ {% if Slides >= 30 %}<li data-thumb="{{ Slide_Image_Url_30 }}"><img src="{{ Slide_Image_Url_30 }}" ></li>{% endif %}
+    
+{% endif %}
+{% if Image_Source == 'Lab' or Image_Source == 'lab' %}
+{% assign: Lab = 'http://themefiend.com/lab/images/' %}
+ {% capture Slide_Image %}<li data-thumb="{{ Lab }}{{ Theme_Fiend_Lab_UserName }}/{{ page.url | remove: 'footer-'  | remove: 'sidebar-'  | remove: store.url }}-slide-01.jpg"><img src="{{ Lab }}{{ Theme_Fiend_Lab_UserName }}/{{ page.url | remove: 'footer-'  | remove: 'sidebar-'  | remove: store.url }}-slide-01.jpg" ></li>{% endcapture %}
+ 
+    {% if Slides >= 1 %}{{ Slide_Image }}{% endif %}
+ {% if Slides >= 2 %}{{ Slide_Image | replace: "-01", "-02" }}{% endif %}
+ {% if Slides >= 3 %}{{ Slide_Image | replace: "-01", "-03" }}{% endif %}
+ {% if Slides >= 4 %}{{ Slide_Image | replace: "-01", "-04" }}{% endif %}
+ {% if Slides >= 5 %}{{ Slide_Image | replace: "-01", "-05" }}{% endif %}
+ {% if Slides >= 6 %}{{ Slide_Image | replace: "-01", "-06" }}{% endif %}
+ {% if Slides >= 7 %}{{ Slide_Image | replace: "-01", "-07" }}{% endif %}
+ {% if Slides >= 8 %}{{ Slide_Image | replace: "-01", "-08" }}{% endif %}
+ {% if Slides >= 9 %}{{ Slide_Image | replace: "-01", "-09" }}{% endif %}
+ {% if Slides >= 10 %}{{ Slide_Image | replace: "-01", "-10" }}{% endif %}
+
+ {% if Slides >= 11 %}{{ Slide_Image  | replace: "-01", "-11" }}{% endif %}
+ {% if Slides >= 12 %}{{ Slide_Image | replace: "-01", "-12" }}{% endif %}
+ {% if Slides >= 13 %}{{ Slide_Image | replace: "-01", "-13" }}{% endif %}
+ {% if Slides >= 14 %}{{ Slide_Image | replace: "-01", "-14" }}{% endif %}
+ {% if Slides >= 15 %}{{ Slide_Image | replace: "-01", "-15" }}{% endif %}
+ {% if Slides >= 16 %}{{ Slide_Image | replace: "-01", "-16" }}{% endif %}
+ {% if Slides >= 17 %}{{ Slide_Image | replace: "-01", "-17" }}{% endif %}
+ {% if Slides >= 18 %}{{ Slide_Image | replace: "-01", "-18" }}{% endif %}
+ {% if Slides >= 19 %}{{ Slide_Image | replace: "-01", "-19" }}{% endif %}
+ {% if Slides >= 20 %}{{ Slide_Image | replace: "-01", "-20" }}{% endif %}
+
+ {% if Slides >= 21 %}{{ Slide_Image  | replace: "-01", "-21" }}{% endif %}
+ {% if Slides >= 22 %}{{ Slide_Image | replace: "-01", "-22" }}{% endif %}
+ {% if Slides >= 23 %}{{ Slide_Image | replace: "-01", "-23" }}{% endif %}
+ {% if Slides >= 24 %}{{ Slide_Image | replace: "-01", "-24" }}{% endif %}
+ {% if Slides >= 25 %}{{ Slide_Image | replace: "-01", "-25" }}{% endif %}
+ {% if Slides >= 26 %}{{ Slide_Image | replace: "-01", "-26" }}{% endif %}
+ {% if Slides >= 27 %}{{ Slide_Image | replace: "-01", "-27" }}{% endif %}
+ {% if Slides >= 28 %}{{ Slide_Image | replace: "-01", "-28" }}{% endif %}
+ {% if Slides >= 29 %}{{ Slide_Image | replace: "-01", "-29" }}{% endif %}
+ {% if Slides >= 30 %}{{ Slide_Image | replace: "-01", "-30" }}{% endif %}
+{% endif %}
+    
+ </ul>
+</div>
+{% endcapture %}
+  
+  {{ gallery_slider }}
+   {{ gallery_slider | replace: "gallery-slider", "carousel" }}
+</div>
+
+ 
+ {{ -----BEGIN GALLERY CONFIGURATION---- }}
+
+
+<script type="text/javascript" charset="utf-8">
+  
+jQuery.noConflict();
+  
+   (function($) {
+  $(document).ready(function(){
+    $('#wide-slider').appendTo('#wide-slider-contents');
+   $('#carousel').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: true,
+    slideshow: true,
+    itemWidth: 210,
+    itemMargin: 5,
+    asNavFor: '#gallery-slider'
+  });
+      $('#gallery-slider').flexslider({
+        animation: "{{ Slider_Animation_Effect }}",
+        slideshowSpeed: {{ Slider_Speed }}000,
+ controlNav: false,
+        animationLoop: true,
+        slideshow: true,
+       sync: "#carousel",
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+    });
+   })(jQuery);
+</script>

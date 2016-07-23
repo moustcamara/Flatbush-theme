@@ -1,0 +1,101 @@
+{{ ------------BEGIN THEME SETTINGS AND CONTROLS------------ }}
+
+{% capture Contact_Page_Intro_Text %}
+<contact-text> <!-- Enter Contact page intro text below -->
+Lorem ipsum dolor sit amet, consectetuer...
+</contact-text>
+{% endcapture %}
+
+
+{% assign: Your_Address = "Your Address" %}
+{% assign: City_State_Zip = "City,State Zip" %}
+{% assign: Phone_Number = "(123) 435-6789" %}
+{% assign: Email = "youremail@email.com" %}
+
+
+{% capture Customer_Service_Text %}
+<customer-service-text> <!-- Enter Contact page intro text below -->
+Our online customer service hours are:Monday - Friday 10:00am to 5:00pm EST <br>Please allow up to 24 hours for a response to your inquiry. <br>Emails sent during non-office hours will be responded to on the next business day.
+</customer-service>
+{% endcapture %}
+
+{% assign: Contact_Submit_Success_Message = "Your message has been sent and we will respond as soon as possible." %}
+
+{% assign: Subject_Field_Type = 'Text Field' %} {{ Options: 'Dropdown' or 'Text Field' }}
+
+{{ --Subject Dropdown Options-- }}
+
+{% assign: Number_of_Options = 5 %} {{ Note: Please enter number (from 1 to 5) of subject options WITHOUT quotation marks }}
+
+{% assign: Subject_Info_Default = 'Select Option' %} {{ Note: This is the default text that shows for the subject, which the user can not select }}
+{% assign: Option_1 = 'Placing an Order' %}
+{% assign: Option_2 = 'Order Inquiry' %}
+{% assign: Option_3 = 'Returns and Exchanges' %}
+{% assign: Option_4 = 'Product Questions' %}
+{% assign: Option_5 = 'General Questions' %}
+
+{{ ------------END THEME SETTINGS AND CONTROLS------------ }}
+
+<div id="contact-content">
+
+<div id="contact-intro-text">  
+{{ Contact_Page_Intro_Text | paragraphs }}
+</div>
+  
+  
+{% if contact.sent %}
+	
+	<p id="contact-sent">{{ Contact_Submit_Success_Message }}</p>
+	
+{% else %}
+
+<div id="contact-info" class="span6">
+ <b style="font-weight:bold">{{ store.name }}</b><br>
+{{ Your_Address }}<br>
+{{ City_State_Zip }}<br>
+<br>
+By phone: {{ Phone_Number }}<br>
+By email: {{ Email }}<br>
+  
+{{ Customer_Service_Text | paragraphs }}
+  
+</div>
+	
+	<form id="contact-form" method="post" action="/contact" class="span4">
+		
+		<label for="name"><span>Name</span></label>
+		{{ contact | contact_input: 'name' | replace: "id=", "class='input-xlarge' id="  }}
+		
+		<label for="email"><span>Email</span></label>
+		{{ contact | contact_input: 'email' | replace: "id=", "class='input-xlarge' id="  }}
+		
+		<label for="subject"><span>Subject</span></label>
+
+          {% if Subject_Field_Type == 'Text Field' or Subject_Field_Type == blank %}{{ contact | contact_input: 'subject' | replace: "id=", "class='input-xlarge' id="  }}{% endif %}
+          
+          {% if Subject_Field_Type == 'Dropdown' %}
+          <select id="subject" name="subject" tabindex="3" class="input-xlarge'>
+            <option value="#" selected>***{{ Subject_Info_Default }}***</option>
+            {% if Number_of_Options >= 1 %}<option value="{{ Option_1 }}">{{ Option_1 }}</option>{% endif %}
+            {% if Number_of_Options >= 2 %}<option value="{{ Option_2 }}">{{ Option_2 }}</option>{% endif %}
+            {% if Number_of_Options >= 3 %}<option value="{{ Option_3 }}">{{ Option_3 }}</option>{% endif %}
+            {% if Number_of_Options >= 4 %}<option value="{{ Option_4 }}">{{ Option_4 }}</option>{% endif %}
+            {% if Number_of_Options >= 5 %}<option value="{{ Option_5 }}">{{ Option_5 }}</option>{% endif %}
+          </select>
+          {% endif %}          
+		
+		<label for="message"><span>Message</span></label>
+		{{ contact | contact_input: 'message' | replace: "id=", "class='input-xxlarge' id="  }}
+		<p>Enter the letters from the image in the box below.</p>
+		<div id="captcha-div">{{ contact.captcha }}</div>
+		<label for="captcha">Spam Check</label>
+		{{ contact | contact_input: 'captcha' | replace: "id=", "class='input-xlarge' id="  }}
+			
+		
+		<button id="contact-submit" name="submit" type="submit"><span>Send</span></button>	
+	
+	</form>	
+
+{% endif %}
+	
+</div>
