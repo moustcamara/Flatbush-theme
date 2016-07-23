@@ -12,7 +12,7 @@
 
 {% assign: Hide_Category_and_Artist_Title = 'No' %}
 
-{{ --END CATEGORY/ARTIST BANNER SETTINGS--}}
+{{ --END CATEGORY/ARTIST BANNER SETTINGS-- }}
 
 
 {{ -----END SETTINGS AND CONTROLS----- }}
